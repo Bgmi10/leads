@@ -7,8 +7,9 @@ import './login.css'
 export const Login = () => {
 
     const [loginstyle , setLoginstyle] = useState(false)
-    const [vibrate , setVibrate] = useState(true)
-    console.log(vibrate)
+    const [vibrate , setVibrate] = useState(false)
+   
+    
 
     useEffect(() => {
 
@@ -22,31 +23,28 @@ export const Login = () => {
     },[])
 
     useEffect(() =>{
+
        const i =  setInterval(() => {
-           setVibrate(false)
+           setVibrate(prev => !prev)
         },5000)
        
-       
-        return () => clearInterval(i)
-
       
-    },[vibrate])
-
-    useEffect(() =>{
-       const  i =   setInterval(() => {
-             setVibrate(true)
-         }, 2000);
-
-         return () => clearInterval(i)
+        return () => clearInterval(i)
+         
+       
     },[])
+
+   
+
+   
   return (
     <>
     <div className='m-4 '>
         <AccountCircleIcon fontSize='large' />
        
     </div>
-     <div className={ (vibrate ? 'login-button' : '' ) + ' mt-16 absolute   opacity-80'}>
-     { loginstyle && <> <FontAwesomeIcon icon={faAngleUp}  className='absolute bottom-6 left-6'/> <span className='rounded-sm  cursor-pointer  p-2 m-[3px]  bg-black   text-white  '>Login </span></>}
+     <div className={ (!vibrate ? 'login-button' : '' ) + '  mt-16 absolute   opacity-80'}>
+     { loginstyle && <> <FontAwesomeIcon icon={faAngleUp}  className='absolute bottom-6 left-6 '/> <span className='rounded-md  cursor-pointer  p-2 m-[4px]  bg-black   text-white  '>Login </span></>}
      </div>
      </> 
   )

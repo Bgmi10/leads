@@ -1,0 +1,17 @@
+/* Increase width of dots and make them horizontal */
+.slick-dots li button:before {
+  content: '';
+  width: 12px; /* Adjust width as needed */
+  height: 4px; /* Adjust height to maintain aspect ratio */
+  background-color: black; /* Dot color */
+  display: inline-block;
+  border-radius: 2px; /* Adjust to half of height for rounded ends */
+}
+
+/* Active dot */
+.slick-dots li.slick-active button:before {
+  /* You can adjust active dot styles if needed */
+  background-color: black; /* Dot color */
+  width: 12px; /* Adjust width for active dot */
+  height: 4px; /* Adjust height to maintain aspect ratio */
+}

@@ -6,6 +6,7 @@ import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 export const Cart = () => {
   const cartcount = useSelector(store => store.cart.items);
 
+
   return (
     <div className='flex justify-end mt-5 mr-3 '>
       <div className='relative'>
