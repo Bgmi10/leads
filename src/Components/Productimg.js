@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './productimg.css'
-export const Productimg = ({ imageurl, scale = 2}) => {
+export const Productimg = ({ imageurl, scale = 4}) => {
   const [transformOrigin, setTransformOrigin] = useState('50% 50%')
   const [isHover, setIsHover] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: '50%', y: '50%' })
@@ -30,7 +30,7 @@ export const Productimg = ({ imageurl, scale = 2}) => {
       style={{ backgroundImage: `url(${imageurl})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
     >
       <div
-        className={`absolute top-0 left-0 w-full h-full bg-center bg-cover transition-transform duration-500  cursor-zoom-in hover:blur-sm `}
+        className={`absolute top-0 left-0 w-full h-full bg-center bg-cover transition-transform duration-500 shadow-md   cursor-zoom-in hover:blur-sm `}
         style={{
           backgroundImage: `url(${imageurl})`,
         
@@ -38,7 +38,7 @@ export const Productimg = ({ imageurl, scale = 2}) => {
       />
       {isHover && (
         <div
-          className=" magnifier-circle"
+          className=" magnifier-circle "
           style={{
             top: mousePosition.y,
             left: mousePosition.x,
@@ -46,7 +46,8 @@ export const Productimg = ({ imageurl, scale = 2}) => {
             backgroundPosition: transformOrigin,
             backgroundSize: `${scale * 100}%`,
           }}
-        />
+        ></div>
+        
       )}
     </div>
   )

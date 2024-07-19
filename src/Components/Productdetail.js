@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { baseurl, token } from '../utils/constans'
+import { baseurl, token } from '../utils/constants'
 import { Productimg } from './Productimg'
 import { Productoverview } from './Productoverview'
 
@@ -37,3 +37,6 @@ export const Productdetail = () => {
   </>
   )
 }
+
+
+export default Productdetail

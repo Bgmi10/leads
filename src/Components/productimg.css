@@ -1,13 +1,27 @@
-
 .magnifier-circle {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   pointer-events: none;
-  transition: background-position 0.1s ease-out;
   transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 3px solid #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-repeat: no-repeat;
+  transition: background-position 0.1s ease-out, transform 0.1s ease-out;
 }
 
-
+.magnifier-circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 60%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
