@@ -6,7 +6,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import './Samplecard.css'; // Create this CSS file for transitions
+import './Samplecard.css'; 
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Samplecard = () => {
   const dispatch = useDispatch();
@@ -31,6 +33,7 @@ export const Samplecard = () => {
 
   const handleclick = (item) => {
     dispatch(addtocart(item));
+    toast.success(`Successfully added ${item.attributes.name}   `)
   };
 
   const isItemInCart = (id) => {
@@ -74,6 +77,7 @@ export const Samplecard = () => {
           </CSSTransition>
         ))}
       </div>
+      
     </>
   );
 };

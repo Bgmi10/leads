@@ -6,11 +6,14 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { removefromcart, updateitemcartquantity } from '../../redux/cartSlice';
 import Fab from '@mui/material/Fab';
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const Cartitems = ({ items }) => {
   const [arrowOpen, setArrowOpen] = useState(true);
   const cartItems = useSelector(store => store.cart.items);
-  console.log(items)
+  
   const dispatch = useDispatch();
 
   const handleToggle = () => {
@@ -31,10 +34,12 @@ export const Cartitems = ({ items }) => {
     }
   };
   
-
-  const handledeleteitem = (id) => {
+  
+  const handledeleteitem = (id , name) => {
    
     dispatch(removefromcart(id))
+   
+    toast.error(`${name} is removed from the cart`)
     
   }
   return (
@@ -87,7 +92,7 @@ export const Cartitems = ({ items }) => {
                <Fab variant="extended" size="small" color="default">+</Fab>
                 </button>
                 <div className='ml-4 mt-1'>
-                <button className='p-1 bg-black  text-white rounded-md  ' onClick={()=>handledeleteitem(i.id)}>Remove</button>
+                <button className='p-1 bg-black  text-white rounded-md  ' onClick={()=>handledeleteitem(i.id , i.attributes.name)}>Remove</button>
                 </div>
                 
               </div>
@@ -96,6 +101,7 @@ export const Cartitems = ({ items }) => {
           </div>
         );
       })}
+  
     </div>
   );
 };

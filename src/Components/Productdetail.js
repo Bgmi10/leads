@@ -18,9 +18,6 @@ export const Productdetail = () => {
         })
 
         const json = await res.json()
-
-        console.log(json)
-
         setData(json)
     }
     useEffect(() =>{

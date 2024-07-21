@@ -6,6 +6,7 @@ import { Products } from "./Components/Products";
 import { Samplecard } from "./Components/Samplecard";
 import { Whatsapp } from "./Components/Whatsapp";
 import {BrowserRouter as Router , Route , Routes} from 'react-router-dom'
+import { ToastContainer } from "react-toastify";
 
 
 const LazyProductDetail = lazy(() => import('./Components/Productdetail'))
@@ -21,6 +22,7 @@ function App() {
       <Router >
       <Offerslider />
       <Header />
+      <ToastContainer />
       <Suspense fallback={<div>loading...</div>} >
       
         <Routes>
