@@ -5,6 +5,8 @@ import { SearchResultbox } from './SearchResultbox';
 export const Searchbar = () => {
   const [dynamicPlaceholder, setDynamicPlaceholder] = useState('Search for "Groundnut oil"');
 
+  const [userinput , setUserinput] = useState('')
+
   const oilSearchSuggestions = [
     '"Groundnut oil"',
     '"Coconut oil"',
@@ -20,22 +22,25 @@ export const Searchbar = () => {
 
     return () => clearInterval(intervalId);
   }, []);
+  
 
   return (
-    <div className='search-container'>
+    <div >
       <div className='relative lg:flex items-center m-4 '>
         <input 
           type='text' 
           placeholder={dynamicPlaceholder} 
-          className='lg:w-96 p-2 pl-4 pr-10 border-2 border-gray-300 rounded-full focus:outline-none focus:border-blue-400 transition duration-300 ease-in-out'
+          className='lg:w-96 p-2 pl-4 pr-10 border shadow-sm border-gray-300 rounded-md focus:outline-none focus:border-blue-400 transition duration-300 ease-in-out'
+          value={userinput}
+          onChange={e => setUserinput(e.target.value)}
         />
         <SearchIcon 
           fontSize='large' 
-          className='cursor-pointer absolute right-8 border-l text-gray-400 hover:text-blue-400 transition duration-300 ease-in-out'
+          className='cursor-pointer absolute right-1 border-l text-gray-400 hover:text-blue-400 transition duration-300 ease-in-out'
         />
       </div>
-      <div className='flex-col flex absolute'>
-        <SearchResultbox />
+      <div className='flex-col flex '>
+        <SearchResultbox userinput={userinput}  />
       </div>
     </div>
   );
