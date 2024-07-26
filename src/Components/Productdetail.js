@@ -26,10 +26,10 @@ export const Productdetail = () => {
   
   return (
     <>
-    <div className="">
+    <div className="flex">
      <Productimg imageurl={ baseurl + data?.data?.attributes.img.data.attributes.url}/>
 
-     <Productoverview />
+     <Productoverview  data={data}/>
   </div>
   </>
   )

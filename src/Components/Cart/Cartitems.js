@@ -20,10 +20,14 @@ export const Cartitems = ({ items }) => {
     setArrowOpen(prev => !prev);
   };
 
-  const handleIncrease = (id) => {
+  const handleIncrease = (id , cartItem , i) => {
     const item = cartItems.find(i => i.id === id);
     if (item) {
       dispatch(updateitemcartquantity({ id, quantity: item.quantity + 1 }));
+    }
+
+    if(i.attributes.stock === cartItem.quantity){
+      toast.warning('stock exceeded')
     }
   };
 
@@ -86,13 +90,13 @@ export const Cartitems = ({ items }) => {
                 <span className='mx-4'>{cartItem.quantity}</span>
                 <button 
                   className='font-normal text-2xl cursor-pointer' 
-                  onClick={() => handleIncrease(i.id)}
-                  disabled={i.attributes.stock === cartItem.quantity }
+                  onClick={() => handleIncrease(i.id , cartItem , i)}
+                
                 >
                <Fab variant="extended" size="small" color="default">+</Fab>
                 </button>
                 <div className='ml-4 mt-1'>
-                <button className='p-1 bg-black  text-white rounded-md  ' onClick={()=>handledeleteitem(i.id , i.attributes.name)}>Remove</button>
+                <button className='p-1 bg-red-500 hover:bg-red-600 outline-none border-none  text-white rounded-md  ' onClick={()=>handledeleteitem(i.id , i.attributes.name)}>Remove</button>
                 </div>
                 
               </div>

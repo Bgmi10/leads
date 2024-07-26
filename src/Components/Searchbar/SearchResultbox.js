@@ -6,7 +6,7 @@ export const SearchResultbox = ({userinput}) => {
 
     const [data , setData] = useState(null)
     const cacheresults = useSelector(store => store.cacheresults)
-    console.log(cacheresults)
+    
     const dispatch = useDispatch()
     const fetch_data = async () =>{
         const res = await fetch(`https://dummyjson.com/products/search?q=${userinput}&limit=6`)
@@ -39,7 +39,7 @@ export const SearchResultbox = ({userinput}) => {
                     <div className='p-2 m-3 ' key={i.id}>
                           <ol className='flex justify-between'>
                             <li>{i.title}</li>
-                            <img src={i.thumbnail} className='h-5 w-5' />
+                            <img src={i.thumbnail} className='h-5 w-5'  />
                           </ol>
                     </div>
                 ))

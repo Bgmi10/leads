@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/Store';
 import {Provider} from 'react-redux'
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

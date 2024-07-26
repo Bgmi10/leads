@@ -2,10 +2,11 @@ import React from 'react';
 
 
 export const CartInvoice = ({ items }) => {
-  
-  const totalPrice = items.reduce((acc, item) => acc + item.attributes.price, 0) * items?.[0].quantity;
-  const originalPrice = items.reduce((acc, item) => acc + item.attributes.actualprice, 0) * items?.[0].quantity
-  const totalDeliveryCharge = items.reduce((acc, item) => acc + item.attributes.deliveryCharges, 0);
+
+
+  const totalPrice = items.reduce((acc, item) => acc + item.attributes.price  * item.quantity , 0)  
+  const originalPrice = items.reduce((acc, item) => acc + item.attributes.actualprice * item.quantity, 0) 
+  const totalDeliveryCharge = items.reduce((acc, item) => acc + item.attributes.deliveryCharges * item.quantity, 0);
   const discountPrice = originalPrice - totalPrice;
 
   let finalPrice = originalPrice - discountPrice;
@@ -16,27 +17,33 @@ export const CartInvoice = ({ items }) => {
   }
 
   return (
-    <div className='w-96 h-72 border m-10 bg-gray-100 p-4 rounded-lg shadow-md'>
-      <div className='border-b p-2'>
-        <span className='mt-4 font-normal text-lg'>Price Detail</span>
+    <div className='w-96 h-86 border m-10  p-4 rounded-lg shadow-md'>
+      <div className='border-b p-4 '>
+        <span className='font-semibold text-xl text-gray-700'>Price Detail</span>
       </div>
       <div className='flex m-2 p-2 justify-between'>
         <span className='font-normal text-md'>Price ({items.length} items)</span>
         <span>₹{originalPrice}</span>
       </div>
       <div className='flex m-2 p-2 justify-between'>
-        <span className='font-normal text-md'>Discount</span>
+        <span className='font-normal text-md'>Flat Discount</span>
         <span className='text-red-400'>- ₹{discountPrice}</span>
       </div>
       <div className='flex m-2 p-2 justify-between'>
         <span className='font-normal text-md'>Delivery Charges</span>
-        <span className={isFreeDelivery ? 'text-green-400' : 'text-green-400'}>
+        <span className={isFreeDelivery ? 'text-green-400' : ''}>
           {isFreeDelivery ? 'Free' : `+₹${totalDeliveryCharge}`}
         </span>
       </div>
       <div className='flex m-2 p-2 justify-between border-t border-gray-200 mt-4 pt-2'>
         <span className='font-bold text-lg'>Total Amount</span>
         <span className='font-bold text-lg'>₹{finalPrice}</span>
+      </div>
+      <div className='m-2 p-2 text-center'>
+        <span className=' text-sm text-gray-600 italic'> ** you will save ₹{discountPrice} on this order ** </span>
+      </div>
+      <div className='justify-center flex'>
+        <button className='p-2 rounded-md bg-blue-400 font-normal text-white w-[400px] hover:bg-blue-500 transition-transform text-lg'>Place Order </button>
       </div>
     </div>
   );
