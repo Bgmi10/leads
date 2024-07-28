@@ -5,13 +5,15 @@ import { Offerslider } from "./Components/Offerslider";
 import { Products } from "./Components/Products";
 import { Samplecard } from "./Components/Samplecard";
 import { Whatsapp } from "./Components/Whatsapp";
-import {BrowserRouter as Router , Route , Routes} from 'react-router-dom'
+import {BrowserRouter as Router , Route , Routes, useLocation} from 'react-router-dom'
 import { ToastContainer } from "react-toastify";
+import { Breadcrumbs } from "./Components/Breadcrumbs";
 
 
 const LazyProductDetail = lazy(() => import('./Components/Productdetail'))
 
 const LazyCartPage = lazy(() => import('./Components/Cart/Cartdetail'))
+
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
       <Router >
       <Offerslider />
       <Header />
+ 
       <ToastContainer />
       <Suspense fallback={<div>loading...</div>} >
       
