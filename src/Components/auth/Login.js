@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import {  faAngleUp, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import NavigationIcon from '@mui/icons-material/Navigation';
 import './login.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -27,7 +28,7 @@ export const Login = () => {
 
        const i =  setInterval(() => {
            setVibrate(prev => !prev)
-        },5000)
+        },3000)
        
       
         return () => clearInterval(i)
@@ -46,8 +47,8 @@ export const Login = () => {
         <AccountCircleIcon fontSize='large'className='cursor-pointer' />
        
     </div>
-     <div className={ (!vibrate ? 'login-button' : '' ) + '  mt-[49px] absolute   opacity-80'}>
-     { loginstyle && <> <FontAwesomeIcon icon={faAngleUp}  className='absolute bottom-9 left-6 '/> <button className='rounded-md  cursor-pointer  p-2 m-[4px]  bg-black   text-white  ' onClick={handlelogin}>Login </button></>}
+     <div className={ (!vibrate ? 'login-button' : '' ) + '  mt-[54px] absolute   opacity-80'}>
+     { loginstyle && <> <NavigationIcon  fontSize='sm' className='absolute bottom-7 right-6 '/> <button className=' cursor-pointer  p-1 m-[4px]  bg-black   text-white  font-normal w-14 rounded-  ' onClick={handlelogin}>Login </button></>}
      </div>
      </> 
   )

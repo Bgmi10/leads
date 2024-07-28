@@ -1,27 +1,14 @@
 .magnifier-circle {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  width: 250%;
+  height: 383px;
+  background: white;
+  border-radius: 5px;
+  margin-left: 320px;
+  margin-top: 230px;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  overflow: hidden;
-  border: 3px solid #fff;
-  background-color: rgba(255, 255, 255, 0.1);
   background-repeat: no-repeat;
   transition: background-position 0.1s ease-out, transform 0.1s ease-out;
 }
 
-.magnifier-circle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  height: 90%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 60%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  pointer-events: none;
-}
