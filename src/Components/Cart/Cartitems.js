@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const Cartitems = ({ items }) => {
   const [arrowOpen, setArrowOpen] = useState(true);
-  const cartItems = useSelector(store => store.cart.items);
+  
   
   const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ export const Cartitems = ({ items }) => {
   };
 
   const handleIncrease = (id , cartItem , i) => {
-    const item = cartItems.find(i => i.id === id);
+    const item = items.find(i => i.id === id);
     if (item) {
       dispatch(updateitemcartquantity({ id, quantity: item.quantity + 1 }));
     }
@@ -32,7 +32,7 @@ export const Cartitems = ({ items }) => {
   };
 
   const handleDecrease = (id) => {
-    const item = cartItems.find(i => i.id === id);
+    const item = items.find(i => i.id === id);
     if (item && item.quantity > 1) {
       dispatch(updateitemcartquantity({ id, quantity: item.quantity - 1 }));
     }
@@ -57,7 +57,7 @@ export const Cartitems = ({ items }) => {
         />
       </div>
       {arrowOpen && items.map((i) => {
-        const cartItem = cartItems.find(item => item.id === i.id);
+        const cartItem = items.find(item => item.id === i.id);
         return (
           <div className='flex items-center justify-between p-4 border-b border-gray-200' key={i.id}>
             <div className='flex-shrink-0'>

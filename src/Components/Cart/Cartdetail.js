@@ -7,8 +7,9 @@ import { CartInvoice } from './CartInvoice'
 export const Cartdetail = () => {
 
     const items = useSelector(store => store.cart.items)
-    
 
+ 
+  
 
   return (
     <>

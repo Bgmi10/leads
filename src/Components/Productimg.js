@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './productimg.css'
-export const Productimg = ({ imageurl, scale = 4}) => {
+export const Productimg = ({ imageurl, scale = 6}) => {
   const [transformOrigin, setTransformOrigin] = useState('50% 50%')
   const [isHover, setIsHover] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: '50%', y: '50%' })
@@ -23,14 +23,14 @@ export const Productimg = ({ imageurl, scale = 4}) => {
 
   return (
     <div
-      className="relative overflow-hidden p-2 sm: w-[256px] sm: h-[256px] md:w-80 md:h-80 lg:w-100 lg:h-100 xl:w-128 xl:h-128 mt-10  lg:ml-22 sm: ml-20 xsm:ml-16 "
+      className="relative overflow-hidden  sm: w-[256px] sm: h-[256px] md:w-80 md:h-80  lg:h-96 xl:w-128 xl:h-128 mt-10  lg:ml-2 sm: ml-20 xsm:ml-16 "
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       onMouseMove={handleMouseMove}
       style={{ backgroundImage: `url(${imageurl})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
     >
       <div
-        className={`absolute top-0 left-0 w-full h-full bg-center bg-cover transition-transform duration-500 shadow-md   cursor-zoom-in hover:blur-sm `}
+        className={`absolute top-0 left-0 w-full h-full bg-center bg-cover transition-transform duration-500 shadow-md   cursor-zoom-in  `}
         style={{
           backgroundImage: `url(${imageurl})`,
         
