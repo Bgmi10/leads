@@ -8,6 +8,7 @@ import { Whatsapp } from "./Components/Whatsapp";
 import {BrowserRouter as Router , Route , Routes, useLocation} from 'react-router-dom'
 import { ToastContainer } from "react-toastify";
 import { Breadcrumbs } from "./Components/Breadcrumbs";
+import { Imageshowcase } from "./Components/Imageshowcase";
 
 
 const LazyProductDetail = lazy(() => import('./Components/Productdetail'))
@@ -35,6 +36,7 @@ function App() {
             <Whatsapp />
             <Products />
             <Samplecard />
+            <Imageshowcase />
             </>
           } />
          
@@ -52,3 +54,4 @@ function App() {
 }
 
 export default App;
+

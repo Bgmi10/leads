@@ -2,7 +2,7 @@ import React from 'react'
 import { Breadcrumbs } from './Breadcrumbs'
 
 export const Productoverview = ({data}) => {
-  console.log(data)
+  
   return (
    <>
      <div className='p-3 m-4'>
