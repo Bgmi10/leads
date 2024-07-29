@@ -13,22 +13,22 @@ export const Imageshowcase = () => {
   return (
     
     <>
-    <div className='justify-center flex m-6'>
-        <span className='text-center text-black font-sans text-4xl'>Upgrade Your Food Experience</span>
+    <div className='justify-center flex m-4 '>
+        <span className='text-center text-black font-sans lg:text-4xl sm: text-2xl'>Upgrade Your Food Experience</span>
        
     </div>
-    <div className='justify-center flex m-6'>
-        <span className='text-center text-black font-light text-2xl'>Why choose 'Better'?</span>
+    <div className='justify-center flex m-2'>
+        <span className='text-center text-black font-light lg:text-2xl sm: text-xl'>Why choose 'Better'?</span>
        
     </div>
-    <div className='flex justify-center h-screen  p-5  relative'>
+    <div className='flex justify-center h-screen  p-5  relative '>
       <div className='relative flex gap-1'>
         {data.map((src, index) => (
           <div
             key={index}
             className={`transition-all duration-700 ease-in-out relative ${
-              hoveredIndex === index ? 'w-[130%] z-20 ' : 'w-[250px] '
-            } h-[500px] rounded-lg overflow-hidden`}
+              hoveredIndex === index ? 'w-[130%] z-20 ' : 'lg:w-[250px] sm: w-[60px] '
+            } lg:h-[450px] sm: h-[140px] rounded-3xl overflow-hidden`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(index)}
           >
