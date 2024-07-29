@@ -4,7 +4,7 @@ export const Imageshowcase = () => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
   const data = [
-    'https://www.tatasimplybetter.com/cdn/shop/files/why-choose-04_1296x.jpg?v=1719462554',
+    'https://www.tatasimplybetter.com/cdn/shop/files/why-choose-01_1296x.jpg?v=1719462554',
     'https://www.tatasimplybetter.com/cdn/shop/files/why-choose-03_1296x.jpg?v=1719462554',
     'https://www.tatasimplybetter.com/cdn/shop/files/why-choose-04_1296x.jpg?v=1719462554',
     'https://www.tatasimplybetter.com/cdn/shop/files/why-choose-02_1296x.jpg?v=1719462554'

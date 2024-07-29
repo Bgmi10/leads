@@ -26,7 +26,7 @@ export const Productdetail = () => {
   
   return (
     <>
-    <div className="flex ">
+    <div className="lg:flex sm:hidden ">
      <Productimg imageurl={ baseurl + data?.data?.attributes.img.data.attributes.url}/>
 
      <Productoverview  data={data}/>

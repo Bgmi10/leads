@@ -22,11 +22,11 @@ export const Productimg = ({ imageurl, scale = 2}) => {
     setTransformOrigin(`${x}% ${y}%`)
     setMousePosition({ x: e.pageX - left, y: e.pageY - top })
   }
-
+  const sm  = window.innerWidth < 768
   return (
     <>
     <div
-      className="relative overflow-hidden  sm: w-[256px] sm: h-[256px] md:w-80 md:h-80 cursor-crosshair  lg:h-96 xl:w-128 xl:h-128 mt-10  lg:ml-24 border bg-black  rounded-md sm: ml-20 xsm:ml-16 "
+      className="relative overflow-hidden  sm: w-[230px] sm: m-10  sm: h-[256px] md:w-80 md:h-80 cursor-crosshair  lg:h-96 xl:w-128 xl:h-128 mt-10  lg:ml-24 border   rounded-md   "
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       onMouseMove={handleMouseMove}
@@ -37,12 +37,13 @@ export const Productimg = ({ imageurl, scale = 2}) => {
       
       
     </div>
-   <div className='ml-[500px] absolute '>
+    
+   <div className={!sm ? 'ml-[500px] absolute ' : 'hidden'}>
     {isHover && (
      <>
      
       <div
-        className=" magnifier-circle  "
+        className=" magnifier-circle"
         style={{
           top: mousePosition.y,
           left: mousePosition.x,

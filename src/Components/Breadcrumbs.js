@@ -13,8 +13,8 @@ export const Breadcrumbs = () => {
         </Link>
         {
             pathnames.map((i) => (
-                <Link to={i}>
-               <div key={i} >
+                <Link to={i}  key={i}>
+               <div >
                <span className=''><span className='m-1'>/</span>{i}</span>
                </div>
                </Link>
