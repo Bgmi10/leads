@@ -7,7 +7,7 @@ const stripePromise = loadStripe('pk_test_51OChs5SEwlF820YlfarGX8PnX1iVb2WokJJGE
 
 export const CartInvoice = ({ items }) => {
 
-
+ console.log(items)
 
   const totalPrice = items.reduce((acc, item) => acc + item.attributes.price  * item.quantity , 0)  
   const originalPrice = items.reduce((acc, item) => acc + item.attributes.actualprice * item.quantity, 0) 
@@ -25,7 +25,7 @@ export const CartInvoice = ({ items }) => {
     const stripe = await stripePromise;
 
     // Call your backend to create a checkout session
-    const response = await fetch( baseurl + '/create-checkout-session', {
+    const response = await fetch(  'http://localhost:4242/create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -26,7 +26,7 @@ export const Productimg = ({ imageurl, scale = 2}) => {
   return (
     <>
     <div
-      className="relative overflow-hidden  sm: w-[230px] sm: m-10  sm: h-[256px] md:w-80 md:h-80 cursor-crosshair  lg:h-96 xl:w-128 xl:h-128 mt-10  lg:ml-24 border   rounded-md   "
+      className="relative overflow-hidden  sm: w-[230px] sm: m-10  sm: h-[256px] md:w-80 md:h-80 cursor-crosshair  lg:h-96 xl:w-128 xl:h-128 mt-10  lg:ml-6 border   rounded-md   "
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       onMouseMove={handleMouseMove}

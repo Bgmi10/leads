@@ -9,6 +9,7 @@ import {BrowserRouter as Router , Route , Routes, useLocation} from 'react-route
 import { ToastContainer } from "react-toastify";
 import { Breadcrumbs } from "./Components/Breadcrumbs";
 import { Imageshowcase } from "./Components/Imageshowcase";
+import { Footer } from "./Components/Footer";
 
 
 const LazyProductDetail = lazy(() => import('./Components/Productdetail'))
@@ -47,6 +48,8 @@ function App() {
         
      </Routes>
      </Suspense>
+
+     <Footer />
     </Router>
   
     </div>
