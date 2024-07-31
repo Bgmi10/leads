@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './productimg.css'
-import magni from '../images/mag.png'
+
+
 
 export const Productimg = ({ imageurl, scale = 2}) => {
+  
   const [transformOrigin, setTransformOrigin] = useState('50% 50%')
   const [isHover, setIsHover] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: '50%', y: '50%' })
