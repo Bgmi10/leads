@@ -6,6 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import './Productoverview.css'
 import './Samplecard.css'; 
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -78,10 +79,10 @@ export const Samplecard = () => {
               </Link>
               {isItemInCart(i.id) ? (
                 <Link to={'/mycart'}>
-                  <button className='bg-black text-white rounded-md p-2 w-full hover:scale-105 mt-3 transition duration-300'><ShoppingCartCheckoutIcon /> Checkout</button>
+                  <button className='bg-black text-white rounded-md p-2 w-full hover:scale-95  transition duration-300 offer-shimmer' style={{backgroundColor: "black"}}><ShoppingCartCheckoutIcon /> Checkout</button>
                 </Link>
               ) : (
-                <button className='bg-blue-400 text-white rounded-md p-2 w-full hover:scale-105 mt-3 hover:bg-blue-500 transition duration-300' onClick={() => handleclick(i)}><ShoppingCartIcon /> Add to cart</button>
+                <button className='bg-blue-400 text-white rounded-md p-2 w-full hover:scale-95  hover:bg-blue-500 transition duration-300' onClick={() => handleclick(i)}><ShoppingCartIcon /> Add to cart</button>
               )}
             </div>
           </CSSTransition>

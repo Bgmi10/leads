@@ -1,0 +1,37 @@
+/* src/components/ProductOverview.css */
+
+.offer-shimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #e6ffe6; /* Very light green background for contrast */
+    border-radius: 0.25rem; /* Small border radius */
+    padding: 0.5rem; /* Add some padding for better spacing */
+  }
+  
+  .offer-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%; /* Double the width to ensure full coverage */
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.7) 50%,
+      rgba(255, 255, 255, 0.3) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.8s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
