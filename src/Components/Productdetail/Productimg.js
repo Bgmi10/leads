@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './productimg.css'
+import LensBlurIcon from '@mui/icons-material/LensBlur';
+import { useDispatch } from 'react-redux';
+import { producthover } from '../../redux/producthoverslice';
 
 
 
 export const Productimg = ({ imageurl, scale = 2}) => {
   
   const [transformOrigin, setTransformOrigin] = useState('50% 50%')
+  
   const [isHover, setIsHover] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: '50%', y: '50%' })
+  const dispatch = useDispatch()
+  
+
+  
+  useEffect(() => {
+   dispatch(producthover(isHover))
+  },[isHover])
+  
 
   const handleMouseOver = () => {
     setIsHover(true)
@@ -23,22 +35,27 @@ export const Productimg = ({ imageurl, scale = 2}) => {
     const y = ((e.pageY - top) / height) * 100
     setTransformOrigin(`${x}% ${y}%`)
     setMousePosition({ x: e.pageX - left, y: e.pageY - top })
+    
+    
   }
   const sm  = window.innerWidth < 768
   return (
     <>
     <div
-      className="relative overflow-hidden  sm: w-[230px] sm: m-10  sm: h-[256px] md:w-80 md:h-80 cursor-crosshair  lg:h-96 xl:w-128 xl:h-128 mt-10  lg:ml-6 border   rounded-md   "
+      className="relative overflow-hidden  sm: w-[230px] sm: m-10  sm: h-[256px] md:w-80 md:h-80 cursor-none  lg:h-[375px] xl:w-128 xl:h-128 mt-10   lg:ml-6 border   rounded-md   "
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       onMouseMove={handleMouseMove}
       style={{ backgroundImage: `url(${imageurl})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+      
     >
-   
-   
-      
-      
+    
     </div>
+   {isHover && <div onMouseMove={handleMouseMove} style={{ position : 'absolute' ,top : mousePosition.y + 141,left : mousePosition.x + 119,  backgroundPosition : transformOrigin,  transform: 'translate(-50%, -50%)',
+              pointerEvents: 'none'}}>
+       <LensBlurIcon fontSize='medium' />
+    
+    </div>}
     
    <div className={!sm ? 'ml-[500px] absolute ' : 'hidden'}>
     {isHover && (

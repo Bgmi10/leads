@@ -24,7 +24,7 @@ export const Headeritems = () => {
     <div className='lg:flex m-5 gap-6 space-x-2 sm: hidden '>
         {
             items.map((i , index) =>(
-                <div key={index} className='text-black hover:text-gray-500 cursor-pointer font-normal hover:underline transition-colors duration-300'>
+                <div key={index} className='text-black hover:text-blue-500 cursor-pointer font-normal hover:underline transition-colors duration-300'>
                     {i.title}
                 </div>
             ))

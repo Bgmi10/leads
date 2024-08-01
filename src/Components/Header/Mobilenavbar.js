@@ -21,12 +21,14 @@ export const Mobilenavbar = () => {
         {isOpen && (
           <>
             <span>Shop</span>
+            <span>Search products</span>
             <span>Learn</span>
             <span>Bulk Order</span>
             <span>Recipes</span>
             <span>Track My Order</span>
             <span>About us</span>
             <span>Contact us</span>
+            
             
           </>
         )}

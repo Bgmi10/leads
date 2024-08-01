@@ -7,7 +7,6 @@ const stripePromise = loadStripe('pk_test_51OChs5SEwlF820YlfarGX8PnX1iVb2WokJJGE
 
 export const CartInvoice = ({ items }) => {
 
- console.log(items)
 
   const totalPrice = items.reduce((acc, item) => acc + item.attributes.price  * item.quantity , 0)  
   const originalPrice = items.reduce((acc, item) => acc + item.attributes.actualprice * item.quantity, 0) 

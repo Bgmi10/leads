@@ -1,9 +1,9 @@
 import React from 'react'
-import { Cart } from './Cart/Cart'
-import { Searchbar } from './Searchbar/Searchbar'
-import { Login } from './auth/Login'
+import { Cart } from '../Cart/Cart'
+import { Searchbar } from '../Searchbar/Searchbar'
+import { Login } from '../auth/Login'
 import { Headeritems } from './Headeritems'
-import { header_logo } from '../utils/constants'
+import { header_logo } from '../../utils/constants'
 import { Mobilenavbar } from './Mobilenavbar'
 
 export const Header = () => {

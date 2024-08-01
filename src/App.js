@@ -1,8 +1,8 @@
 import { Suspense, lazy } from "react";
-import { Header } from "./Components/Header";
+import { Header } from "./Components/Header/Header";
 import { Mainslider } from "./Components/Mainslider";
 import { Offerslider } from "./Components/Offerslider";
-import { Products } from "./Components/Products";
+import { Products } from "./Components/Productdetail/Products";
 import { Samplecard } from "./Components/Samplecard";
 import { Whatsapp } from "./Components/Whatsapp";
 import {BrowserRouter as Router , Route , Routes, useLocation} from 'react-router-dom'
@@ -11,7 +11,7 @@ import { Breadcrumbs } from "./Components/Breadcrumbs";
 import { Imageshowcase } from "./Components/Imageshowcase";
 import { Footer } from "./Components/Footer";
 
-const LazyProductDetail = lazy(() => import('./Components/Productdetail'))
+const LazyProductDetail = lazy(() => import('./Components/Productdetail/Productdetail'))
 
 const LazyCartPage = lazy(() => import('./Components/Cart/Cartdetail'))
 
@@ -49,7 +49,7 @@ function App() {
      </Routes>
      </Suspense>
 
-     <Footer />
+     {/* <Footer /> */}
     </Router>
   
     </div>

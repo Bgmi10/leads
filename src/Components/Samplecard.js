@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { addtocart } from '../redux/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { baseurl, token } from '../utils/constants';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import './Productoverview.css'
+import './Productdetail/Productoverview.css'
 import './Samplecard.css'; 
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Dynamicaddtocartbutton } from './Dynamicaddtocartbutton';
 
 export const Samplecard = () => {
   const dispatch = useDispatch();
@@ -66,7 +64,7 @@ export const Samplecard = () => {
               ) : (
                 <span className='bg-green-400 text-white font-sans text-xs p-1 rounded-[4px] absolute top-2 left-2'>In-stock</span>
               )}
-              <Link to={`/productdetail/${i.id}`}>
+              <a href={`/productdetail/${i.id}`}>
                 <img src={dynamicimg === i.id ?  'https://www.tatasimplybetter.com/cdn/shop/files/01_8c295e30-011b-4eb1-ab78-eb9e556d783b_2048x2048.jpg?v=1696853707' : 'https://www.tatasimplybetter.com/cdn/shop/files/02_55327725-425c-47ca-9bfc-95174cfcec22_2048x2048.jpg?v=1696853707'} className='w-full h-60 object-cover rounded-lg border transition-transform duration-150' alt={i.attributes.name} onMouseEnter={() => handlemouseenter(i.id)} onMouseLeave={handlemouseleave} />
                 <div className='p-4'>
                   <span className='text-md font-sans break-words decoration-gray-500  hover:scale-105 hover:underline'>{i.attributes.name}</span>
@@ -76,14 +74,8 @@ export const Samplecard = () => {
                     {i.attributes.offertag >= 1 && <span className='text-green-500 ml-2 font-normal text-xs'><span className='text-sm'>save</span> {i.attributes.offertag}%</span>}
                   </p>
                 </div>
-              </Link>
-              {isItemInCart(i.id) ? (
-                <Link to={'/mycart'}>
-                  <button className='bg-black text-white rounded-md p-2 w-full hover:scale-95  transition duration-300 offer-shimmer' style={{backgroundColor: "black"}}><ShoppingCartCheckoutIcon /> Checkout</button>
-                </Link>
-              ) : (
-                <button className='bg-blue-400 text-white rounded-md p-2 w-full hover:scale-95  hover:bg-blue-500 transition duration-300' onClick={() => handleclick(i)}><ShoppingCartIcon /> Add to cart</button>
-              )}
+              </a>
+              <Dynamicaddtocartbutton item={i}  isItemInCart={isItemInCart } handleclick={handleclick}/>
             </div>
           </CSSTransition>
         ))}

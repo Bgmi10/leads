@@ -5,9 +5,11 @@ import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { removefromcart, updateitemcartquantity } from '../../redux/cartSlice';
-import Fab from '@mui/material/Fab';
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Cartincreasebutton } from './Cartincreasebutton';
+import { Cartdecreasebutton } from './Cartdecreasebutton'
+
 
 
 export const Cartitems = ({ items }) => {
@@ -80,21 +82,9 @@ export const Cartitems = ({ items }) => {
                 <span className='line-through text-gray-400 ml-2'>₹{i.attributes.actualprice}</span>
               </span>
               <div className='flex items-center mt-2'>
-                <button 
-                  className='font-normal text-xl cursor-pointer' 
-                  onClick={() => handleDecrease(i.id)} 
-                  disabled={cartItem.quantity <= 1}
-                >
-                  <Fab variant="extended" size="small" color="default">-</Fab>
-                </button>
+                <Cartdecreasebutton i={i} handleDecrease={handleDecrease}/>
                 <span className='mx-4'>{cartItem.quantity}</span>
-                <button 
-                  className='font-normal text-2xl cursor-pointer' 
-                  onClick={() => handleIncrease(i.id , cartItem , i)}
-                
-                >
-               <Fab variant="extended" size="small" color="default">+</Fab>
-                </button>
+                <Cartincreasebutton handleIncrease={handleIncrease} i={i} cartItem={cartItem}/>
                 <div className='ml-4 mt-1'>
                 <button className='p-1 bg-red-500 hover:bg-red-600 outline-none border-none  text-white rounded-md  ' onClick={()=>handledeleteitem(i.id , i.attributes.name)}>Remove</button>
                 </div>

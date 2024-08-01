@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { baseurl, token } from '../utils/constants'
+import { baseurl, token } from '../../utils/constants'
 import { Productimg } from './Productimg'
 import { Productoverview } from './Productoverview'
 import { useSelector } from 'react-redux'
-import { Multiimgs } from './Multiimgs'
+import { Multiimgs } from '../Multiimgs'
 
 export const Productdetail = () => {
 
@@ -30,7 +30,7 @@ export const Productdetail = () => {
   
   return (
     <>
-    <div className="lg:flex sm:hidden ">
+    <div className="lg:flex  ">
       <Multiimgs data={data}/>
      <Productimg imageurl={ baseurl + imgslice }/>
 

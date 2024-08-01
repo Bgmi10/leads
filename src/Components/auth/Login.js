@@ -51,7 +51,7 @@ export const Login = () => {
     </div>
     
      <div className={ (!vibrate ? 'login-button ' : '' ) + '  mt-[54px] absolute   opacity-80'}>
-     { loginstyle &&  !sm && <> <NavigationIcon  fontSize='sm' className='absolute bottom-7 right-6  s'/> <button className=' cursor-pointer  p-1 m-[4px]  bg-black   text-white  font-normal w-14 rounded-  ' onClick={handlelogin}>Login </button></>}
+     { loginstyle &&  !sm && <> <NavigationIcon  fontSize='sm' className='absolute bottom-7 right-6  '/> <button className=' cursor-pointer  p-1 m-[4px]  bg-black   text-white   outline-none cfont-normal w-14 rounded-md  ' onClick={handlelogin}>Login </button></>}
      </div>
      
      </> 
