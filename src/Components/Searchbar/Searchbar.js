@@ -16,6 +16,7 @@ export const Searchbar = () => {
     '"Sunflower oil"',
   ];
 
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * oilSearchSuggestions.length);

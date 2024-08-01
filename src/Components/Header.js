@@ -4,6 +4,7 @@ import { Searchbar } from './Searchbar/Searchbar'
 import { Login } from './auth/Login'
 import { Headeritems } from './Headeritems'
 import { header_logo } from '../utils/constants'
+import { Mobilenavbar } from './Mobilenavbar'
 
 export const Header = () => {
   return (
@@ -18,6 +19,9 @@ export const Header = () => {
         <Searchbar />
         <Cart />
         <Login />
+      
+        <Mobilenavbar />
+        
         </div>
     </div>
   )

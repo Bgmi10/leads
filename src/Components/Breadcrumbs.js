@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import HomeIcon from '@mui/icons-material/Home';
 
 export const Breadcrumbs = () => {
 
@@ -7,9 +8,9 @@ export const Breadcrumbs = () => {
     const pathnames = location.pathname.split('/').filter(i => i)
     
   return (
-    <div className='flex p-3  '>
+    <div className='flex   '>
         <Link to={'/'}>
-         Home
+         <HomeIcon fontSize='small' className='mt-[-4px]'/>Home
         </Link>
         {
             pathnames.map((i) => (

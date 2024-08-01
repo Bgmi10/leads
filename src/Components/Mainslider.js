@@ -39,7 +39,7 @@ export const Mainslider = () => {
     ];
 
     return (
-        <div className='lg:mt-6 sm: mt-8 '>
+        <div className='lg:mt-6 sm: mt-8 relative'>
             <Slider {...settings} className=' lg:mr-7 lg:ml-6 sm: mr-6 sm: ml-6 '>
                 {desktop.map((image, index) => (
                     <div key={index} className='lg:p-2 border-none outline-none'>

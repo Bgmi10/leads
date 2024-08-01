@@ -8,7 +8,7 @@ export const Productoverview = ({ data }) => {
 
   return (
     <>
-      <div className="p-2 m-4  ">
+      <div className="py-5 m-4  ">
         <Breadcrumbs />
         <div className="py-2">
           <span className="font-bold text-2xl text-gray-800">{data?.data?.attributes?.name}</span>

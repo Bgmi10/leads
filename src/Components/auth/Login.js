@@ -40,16 +40,20 @@ export const Login = () => {
     navigate('/login')
    }
 
+   const sm = window.innerWidth < 786 
+
   return (
     <>
     
     <div className='m-4 '  >
-        <AccountCircleIcon fontSize='large'className='cursor-pointer' />
+        <AccountCircleIcon fontSize='large' className='cursor-pointer' />
        
     </div>
-     <div className={ (!vibrate ? 'login-button' : '' ) + '  mt-[54px] absolute   opacity-80'}>
-     { loginstyle && <> <NavigationIcon  fontSize='sm' className='absolute bottom-7 right-6 '/> <button className=' cursor-pointer  p-1 m-[4px]  bg-black   text-white  font-normal w-14 rounded-  ' onClick={handlelogin}>Login </button></>}
+    
+     <div className={ (!vibrate ? 'login-button ' : '' ) + '  mt-[54px] absolute   opacity-80'}>
+     { loginstyle &&  !sm && <> <NavigationIcon  fontSize='sm' className='absolute bottom-7 right-6  s'/> <button className=' cursor-pointer  p-1 m-[4px]  bg-black   text-white  font-normal w-14 rounded-  ' onClick={handlelogin}>Login </button></>}
      </div>
+     
      </> 
   )
 }

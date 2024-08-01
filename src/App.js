@@ -11,7 +11,6 @@ import { Breadcrumbs } from "./Components/Breadcrumbs";
 import { Imageshowcase } from "./Components/Imageshowcase";
 import { Footer } from "./Components/Footer";
 
-
 const LazyProductDetail = lazy(() => import('./Components/Productdetail'))
 
 const LazyCartPage = lazy(() => import('./Components/Cart/Cartdetail'))
@@ -45,6 +44,7 @@ function App() {
          <Route path="/productdetail/:id" element ={< LazyProductDetail/>} />
 
          <Route path="/mycart" element={<LazyCartPage />} />
+        
         
      </Routes>
      </Suspense>
