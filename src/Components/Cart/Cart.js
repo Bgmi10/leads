@@ -9,7 +9,7 @@ export const Cart = () => {
 
   return (
     <div className='flex justify-end mt-5 mr-3 '>
-      <Link to={'/mycart'}>
+      <a href={'/mycart'}>
       <div className='relative'>
        
         <span className='flex items-center bg-green-300  rounded-sm  px-1 py-1 text-md cursor-pointer shadow-md'>
@@ -21,7 +21,7 @@ export const Cart = () => {
         )}
        
       </div>
-      </Link>
+      </a>
     </div>
   );
 };

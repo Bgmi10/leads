@@ -3,12 +3,14 @@ import { baseurl } from '../../utils/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removefromcart, updateitemcartquantity } from '../../redux/cartSlice';
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Cartincreasebutton } from './Cartincreasebutton';
+import Fab from '@mui/material/Fab';
 import { Cartdecreasebutton } from './Cartdecreasebutton'
+import { Cartdeletebutton } from './Cartdeletebutton';
 
 
 
@@ -82,13 +84,11 @@ export const Cartitems = ({ items }) => {
                 <span className='line-through text-gray-400 ml-2'>₹{i.attributes.actualprice}</span>
               </span>
               <div className='flex items-center mt-2'>
-                <Cartdecreasebutton i={i} handleDecrease={handleDecrease}/>
+                <Cartdecreasebutton i={i} handleDecrease={handleDecrease} Fab={Fab}/>
                 <span className='mx-4'>{cartItem.quantity}</span>
-                <Cartincreasebutton handleIncrease={handleIncrease} i={i} cartItem={cartItem}/>
-                <div className='ml-4 mt-1'>
-                <button className='p-1 bg-red-500 hover:bg-red-600 outline-none border-none  text-white rounded-md  ' onClick={()=>handledeleteitem(i.id , i.attributes.name)}>Remove</button>
-                </div>
+                <Cartincreasebutton handleIncrease={handleIncrease} i={i} cartItem={cartItem} Fab={Fab}/>
                 
+                <Cartdeletebutton  handledeleteitem={handledeleteitem} i={i}/>
               </div>
              
             </div>
