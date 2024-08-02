@@ -51,6 +51,7 @@ export const Cartitems = ({ items }) => {
     
   }
   return (
+    <>
     <div className='border w-full lg:w-3/4 xl:w-1/2 mx-auto  h-auto mt-10 shadow-lg rounded-lg lg:ml-20 '>
       <div className='shadow-md border-b p-4 flex justify-between items-center '>
         <span className='font-semibold text-2xl'>My Cart</span>
@@ -97,5 +98,6 @@ export const Cartitems = ({ items }) => {
       })}
   
     </div>
+    </>
   );
 };

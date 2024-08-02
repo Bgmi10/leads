@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Productdetail/Productoverview.css'
 
 export const Imageshowcase = () => {
   const [hoveredIndex, setHoveredIndex] = useState(1);
@@ -22,7 +23,7 @@ export const Imageshowcase = () => {
         <span className='text-center text-black font-light lg:text-2xl sm: text-xl'>Why choose 'Better'?</span>
        
     </div>
-    <div className='flex justify-center h-screen  p-5  relative '>
+    { !data ? <div className=' w-full h-screen relative flex justify-center offer-shimmer'></div> : <div className='flex justify-center h-screen  p-5  relative '>
       <div className='relative flex gap-1'>
         {data.map((i, index) => (
           <div
@@ -44,7 +45,7 @@ export const Imageshowcase = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div>}
     </>
   );
  };
