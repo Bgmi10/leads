@@ -15,7 +15,7 @@ export const Cart = () => {
             className="text-black hover:text-blue-400 transition-colors duration-200  text-3xl"
             
           />
-          {cartcount.length > 0 && (
+          {(
             <div className="absolute -top-2 -right-2 h-5 w-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center animate-bounce">
               {cartcount.length}
             </div>

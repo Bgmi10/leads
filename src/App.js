@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import { Imageshowcase } from "./Components/Imageshowcase";
 import { Footer } from "./Components/Footer";
 import './Components/Productdetail/Productoverview.css'
+import { Signuppage } from "./Components/auth/Signuppage";
 
 const LazyProductDetail = lazy(() => import('./Components/Productdetail/Productdetail'))
 
@@ -44,6 +45,7 @@ function App() {
          <Route path="/productdetail/:id" element ={< LazyProductDetail/>} />
 
          <Route path="/mycart" element={<LazyCartPage />} />
+         <Route path="/signup" element={<Signuppage />} />
         
         
      </Routes>

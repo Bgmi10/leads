@@ -65,7 +65,7 @@ export const Samplecard = () => {
                 <span className='bg-green-400 text-white font-sans text-xs p-1 rounded-[4px] absolute top-2 left-2'>In-stock</span>
               )}
               <a href={`/productdetail/${i.id}`}>
-                <img src={dynamicimg === i.id ?  'https://www.tatasimplybetter.com/cdn/shop/files/01_8c295e30-011b-4eb1-ab78-eb9e556d783b_2048x2048.jpg?v=1696853707' : 'https://www.tatasimplybetter.com/cdn/shop/files/02_55327725-425c-47ca-9bfc-95174cfcec22_2048x2048.jpg?v=1696853707'} className='w-full h-60 object-cover rounded-lg border transition-transform duration-150' alt={i.attributes.name} onMouseEnter={() => handlemouseenter(i.id)} onMouseLeave={handlemouseleave} />
+                <img src={dynamicimg === i.id ? 'http://localhost:1337/uploads/New_Project_CE_32_CDF_1_3214874e72.png' :  'http://localhost:1337/uploads/New_Project_3_6_A14_D1_C_3f4cd5cbb1.png'} className={'w-full h-60 object-cover rounded-lg border transition-all duration-1000 '} alt={i.attributes.name} onMouseEnter={() => handlemouseenter(i.id)} onMouseLeave={handlemouseleave} />
                 <div className='p-4'>
                   <span className='text-md font-sans break-words decoration-gray-500  hover:scale-105 hover:underline'>{i.attributes.name}</span>
                   <p className='mt-3 text-lg font-sans'>

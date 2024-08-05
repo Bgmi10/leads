@@ -7,7 +7,7 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const handlelogin = () => {
-    navigate('/login');
+    navigate('/signup');
   };
 
 
@@ -15,7 +15,7 @@ export const Login = () => {
     <>
     
        <div className='m-4 ' onClick={handlelogin}>
-        <AccountCircleIcon fontSize='large' className='cursor-pointer'  />
+        <AccountCircleIcon fontSize='large' className='cursor-pointer hover:text-blue-400'  />
       </div>
              
      
