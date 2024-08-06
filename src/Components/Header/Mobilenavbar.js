@@ -20,7 +20,7 @@ export const Mobilenavbar = () => {
       >
         {isOpen && (
           <>
-            <span>Shop</span>
+            <span onClick={() => window.location.href = '/myprofile'}>My profile </span>
             <span>Search products</span>
             <span>Learn</span>
             <span>Bulk Order</span>

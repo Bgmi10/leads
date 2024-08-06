@@ -3,21 +3,21 @@ import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  display: flex;
-  align-items: center;
-  background-color: #4CAF50; /* Change to a more vibrant color */
+  
+  background-color: #A9A9A9; /* Change to a more vibrant color */
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 7px 10px;
+  border-radius: 5px;
+  padding: 4px 10px;
   margin: 8px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  
 
   &:hover {
-    background-color: #45a049; /* Slightly darker shade on hover */
+    background-color: #808080; /* Slightly darker shade on hover */
     transform: scale(1.05); /* Slight zoom effect */
   }
 
@@ -26,14 +26,12 @@ const Button = styled.button`
   }
 
   svg {
-    margin-right: 8px; /* Space between icon and text */
+    margin-right:3px; /* Space between icon and text */
   }
 `;
 
 const OptionsContainer = styled.div`
-  display: flex;
-  flex-direction: column; /* Align buttons vertically */
-  align-items: center;
+  margin-left  : 80px
 `;
 
 const ProductOptions = (props) => {

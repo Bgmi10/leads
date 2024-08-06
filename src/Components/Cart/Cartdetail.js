@@ -7,14 +7,21 @@ import { CartInvoice } from './CartInvoice'
 export const Cartdetail = () => {
 
     const items = useSelector(store => store.cart.items)
-
+    
+    const isAuthenticated = useSelector(store => store.auth.user)
  
   
-
+    const Loginbutton = () => {
+      return (
+        <div className=''>
+          <button onClick={() => window.location.href = '/signup'} >Login to View your cart</button>
+        </div>
+      )
+    }
   return (
     <>
     
-   {items.length === 0 ? (
+   {isAuthenticated ?  items.length === 0 ? (
          <Emptycart items={items}/>
     ):(
       <>
@@ -23,7 +30,7 @@ export const Cartdetail = () => {
       <CartInvoice items={items}/>
       </div>
       </>
-       )}
+       ) : <Loginbutton />}
     
   
     </>

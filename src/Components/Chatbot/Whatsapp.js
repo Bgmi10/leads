@@ -7,10 +7,27 @@ import ActionProvider from './ActionProvider';
 import QuickreplyRoundedIcon from '@mui/icons-material/QuickreplyRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import './Chatbot.css';
+import { createChatBotMessage } from 'react-chatbot-kit';
+import { useSelector } from 'react-redux';
 
 const ChatWidget = () => {
   const [showChat, setShowChat] = useState(false);
 
+  const user = useSelector(store => store?.auth?.user)
+
+ const username = user?.username
+  const  initialMessages =  [
+    createChatBotMessage(`Hello! 👋 ${username} Welcome to Leads . How can I help you today?`, {
+      widget: "productOptions",
+    }),
+  ] 
+  
+  const botName = 'leads'
+  const updatedconfig = {
+    ...config  ,
+    botName ,
+    initialMessages
+  }
   return (
     <div className="flex justify-end">
       <div
@@ -23,7 +40,7 @@ const ChatWidget = () => {
       <div
         className={`chatbot-container fixed bottom-6  rounded-md right-[70px] ${showChat ? 'chatbot-show' : 'chatbot-hide'}`}
       >
-        <Chatbot config={config} messageParser={MessageParser} actionProvider={ActionProvider} />
+        <Chatbot config={updatedconfig} messageParser={MessageParser} actionProvider={ActionProvider} />
       </div>
     </div>
   );

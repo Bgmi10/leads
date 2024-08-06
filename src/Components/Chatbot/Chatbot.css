@@ -3,7 +3,8 @@
     transform: translateY(100%);
     opacity: 0;
     z-index: 1000; /* Ensure the chatbot is on top */
-    border-radius: 8px; /* Add border radius if needed */
+    border-radius: 8px;
+     /* Add border radius if needed */
   }
   
   .chatbot-show {

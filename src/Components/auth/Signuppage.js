@@ -3,8 +3,10 @@ import Button from '@mui/material/Button';
 import { baseurl, token } from '../../utils/constants'
 import TextField from '@mui/material/TextField'
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import { Validateform } from '../../utils/Validateform';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 
 export const Signuppage = () => {
 
@@ -12,22 +14,22 @@ export const Signuppage = () => {
   const [name , setName] = useState('')
   const [email , setEmail] = useState('')
   const [password , setPassword] = useState('')
-  const navigate = useNavigate()
+  const [showpassword , setShowpassword] = useState(false)
+  const {Email , Password  , Name} = Validateform(email , password , name.trim(''))
+ 
 
-  const {Email , Password  , Name} = Validateform(email , password , name)
-  
-  console.log(Email)
+ 
     const handlesbmit =  (e) => {
       e.preventDefault()
       if(!Email){
-        toast.error('check the email field')
+        toast.error('Please enter a valid email.')
       }
       if(!Password){
-        toast.error('* password must be contain atleast one uppercase \n * password must be contain one lowercase \n * password must be contain one numerical value \n * password must be contain atleast one Special characters')
+        toast.error('Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.')
       }
     
-      if(!Name){
-        toast.error('* Name is required field \n * Name characters should be atleast > 3 ')
+      if(issingupform && !Name ){
+        toast.error('Name is a required field and should be at least 3 characters long.')
       }
       const signup_Form_data = {
         username : name,
@@ -41,7 +43,13 @@ export const Signuppage = () => {
         password : password
       }
     
-       const register = async () => { 
+    if (Email && Password && (issingupform ? Name : Email)){
+      dynamicformsubmission()
+    }  
+      
+    
+     
+      async function dynamicformsubmission() { 
         try{
           
             const res = await fetch(issingupform ? baseurl + '/api/auth/local/register'  : baseurl + '/api/auth/local/',{
@@ -55,22 +63,22 @@ export const Signuppage = () => {
                
             if(res.ok){
              const data = await res.json()
-             toast.success('Account created successfully' , data)
-             console.log(data.jwt)
-             navigate('/')
+             toast.success( issingupform ? 'Account created successfully' : 'Logged successfully' )
+             window.location.href = '/'
              sessionStorage.setItem('usertoken' , data.jwt)
+             localStorage.setItem('user' , JSON.stringify(data.user))
             }
             else{
               const errdata = await res.json()
               toast.error(errdata.error.message)
-              console.log(errdata)
+             
             }
         }
         catch (err) { 
             console.log(err)
         }
     }
-    register()
+ 
     
     }
 
@@ -94,7 +102,8 @@ export const Signuppage = () => {
           
           </div>
           <div className='justify-center flex  m-3'>
-          <TextField id="outlined-basic" label="password" variant="outlined"  type="password" className='w-full' onChange={e => setPassword(e.target.value)} required/>
+          <TextField id="outlined-basic" label="password" variant="outlined"  type={!showpassword && 'password' } className='w-full' onChange={e => setPassword(e.target.value)} required />
+          <FontAwesomeIcon icon={ showpassword ?  faEye : faEyeSlash}  className='py-4 ml-[200px] text-lg cursor-pointer  absolute ' onClick={() => setShowpassword(prev => !prev)}/>
           
           </div>
           <div className='text-center  m-3 font-normal text-sm  text-gray-500'>
@@ -108,3 +117,5 @@ export const Signuppage = () => {
    </>
   )
 }
+
+
