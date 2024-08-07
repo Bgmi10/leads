@@ -35,7 +35,7 @@ export const Login = () => {
     <div className='m-4'>
       {isAuthenticated ? (
         <>
-        <div className='flex items-center space-x-2' >
+        <div className='flex items-center space-x-2 ' >
           <button
             className='lg:block sm: hidden font-normal text-lg border border-gray-300 bg-white text-gray-700 rounded-md p-1 hover:bg-gray-200 transition duration-300'
             onClick={() => { window.location.href = '/myprofile'; }}

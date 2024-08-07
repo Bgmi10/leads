@@ -5,7 +5,7 @@ import { Offerslider } from "./Components/Offerslider";
 import { Products } from "./Components/Productdetail/Products";
 import { Samplecard } from "./Components/Samplecard";
 import ChatWidget, { Whatsapp } from "./Components/Chatbot/Whatsapp";
-import {BrowserRouter as Router , Route , Routes, Outlet} from 'react-router-dom'
+import {BrowserRouter as Router , Route , Routes, Outlet, Navigate} from 'react-router-dom'
 import { ToastContainer } from "react-toastify";
 import { Imageshowcase } from "./Components/Imageshowcase";
 import { Footer } from "./Components/Footer";
@@ -23,7 +23,8 @@ const LazyCartPage = lazy(() => import('./Components/Cart/Cartdetail'))
 
 
 function App() {
-
+ const isauthicated = useSelector(store => store.auth.isAuthenticated)
+ 
   return (
     <div>
      
@@ -47,12 +48,12 @@ function App() {
          
         
          <Route path="/productdetail/:id" element ={< LazyProductDetail/>} />
-          
+          <Route path="/myprofile" element={isauthicated ? <Profile /> : <Navigate to={'/signup' } /> }  />  
          <Route path="/mycart" element={<LazyCartPage />} />
          <Route element={<ProtectedRoute children={<Outlet />} />}   >
         <Route path="/signup" element={<Signuppage />} />
         <Route path="/myprofile/address" element={<Address />} />
-        <Route path="/myprofile" element={<Profile />}  /> 
+        
         </Route> 
 
         <Route path="*" element={<NotFound /> } />

@@ -29,7 +29,7 @@ const authSlice = createSlice({
             state.isAuthenticated = true 
 
             localStorage.setItem('user' , JSON.stringify(action.payload.user))
-            localStorage.setItem('usertoken' , JSON.stringify( action.payload.token))
+            
 
         },
 
@@ -40,7 +40,7 @@ const authSlice = createSlice({
             state.isAuthenticated = true
 
             localStorage.setItem('user' , JSON.stringify(action.payload.user))
-            localStorage.setItem('usertoken' , JSON.stringify( action.payload.token))
+           
 
         } ,
 

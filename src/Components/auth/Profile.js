@@ -107,7 +107,7 @@ export const Profile = () => {
                     {confirmdelete && <Confirmindicator confirmdelete={ (confirm)=> {
                                    {if(confirm){
                                     handledeleteaccount()} setConfirmdelete(false)}
-                    } } deletecaption={'Confirm delete'} cancle={'cancle'} message={'Delete Your account'}/> }
+                    } } deletecaption={'Confirm delete'} cancle={'cancel'} message={'Delete Your account'}/> }
 
                      <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/myProfileFooter_4e9fe2.png'  className='mt-24'/>
              </div>
