@@ -1,91 +1,112 @@
-import React from 'react'
+import React from 'react';
 import { TextField, Grid, Select, MenuItem, Button, InputLabel, FormControl } from '@mui/material';
 
-export const Addressform = ({setAddress, setCity , setLocality , setName , setNumber , locality ,setState , setPincode , city , state , handleformsubmit}) => {
+export const Addressform = ({
+  address,
+  city,
+  locality,
+  name,
+  mobilenumber,
+  state,
+  pincode,
+  statesOptions, // Pass an array of state options
+  onAddressChange,
+  onCityChange,
+  onLocalityChange,
+  onNameChange,
+  onNumberChange,
+  onStateChange,
+  onPincodeChange,
+  handleFormSubmit
+}) => {
   return (
     <Grid container spacing={1}>
-    <Grid item xs={12} md={6}>
-      <TextField
-        type='text'
-        label="Name"
-        variant="outlined"
-        fullWidth
-        onChange={e => setName(e.target.value)}
-      />
+      <Grid item xs={12} md={6}>
+        <TextField
+          type='text'
+          label="Name"
+          variant="outlined"
+          fullWidth
+          value={name}
+          onChange={e => onNameChange(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          type='number'
+          label="Mobile Number"
+          variant="outlined"
+          fullWidth
+          value={mobilenumber}
+          onChange={e => onNumberChange(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          type='text'
+          label='Address'
+          variant="outlined"
+          multiline
+          rows={3}
+          fullWidth
+          value={address}
+          onChange={e => onAddressChange(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          type='text'
+          label='Pincode'
+          variant="outlined"
+          fullWidth
+          value={pincode}
+          onChange={e => onPincodeChange(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          type='text'
+          label='Locality'
+          variant="outlined"
+          fullWidth
+          value={locality}
+          onChange={e => onLocalityChange(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          type='text'
+          label='City'
+          variant="outlined"
+          fullWidth
+          value={city}
+          onChange={e => onCityChange(e.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <FormControl variant="outlined" fullWidth>
+          <InputLabel>District</InputLabel>
+          <Select
+            label="District"
+            value={state}
+            onChange={e => onStateChange(e.target.value)}
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            {statesOptions.map((stateOption, index) => (
+              <MenuItem key={index} value={stateOption}>
+                {stateOption}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </Grid>
+      <Grid item xs={12} className="text-center">
+        <Button variant="contained" color="primary" className='mt-4' onClick={handleFormSubmit}>
+          Submit
+        </Button>
+      </Grid>
     </Grid>
-    <Grid item xs={12} md={6}>
-      <TextField
-        type='number'
-        label="Mobile Number"
-        variant="outlined"
-        fullWidth
-        onChange={e => setNumber(e.target.value)}
-      />
-    </Grid>
-    <Grid item xs={12}>
-      <TextField
-        type='text'
-        label='Address'
-        variant="outlined"
-        multiline
-        rows={3}
-        fullWidth
-        onChange={e => setAddress(e.target.value)}
-      />
-    </Grid>
-    <Grid item xs={12} md={6}>
-      <TextField
-        type='text'
-        label='Pincode'
-        variant="outlined"
-        fullWidth
-        onChange={e => setPincode(e.target.value)}
-      />
-    </Grid>
-    <Grid item xs={12} md={6}>
-      <TextField
-        type='text'
-        label='Locality'
-        variant="outlined"
-        fullWidth
-        onChange={e => setLocality(e.target.value)}
-        value={locality}
-      />
-    </Grid>
-    <Grid item xs={12} md={6}>
-      <TextField
-        type='text'
-        label='City'
-        variant="outlined"
-        fullWidth
-        onChange={e => setCity(e.target.value)}
-        value={city}
-      />
-    </Grid>
-    <Grid item xs={12} md={6}>
-      <FormControl variant="outlined" fullWidth>
-        <InputLabel>District</InputLabel>
-        <Select
-          label="District"
-          defaultValue=""
-          onChange={e => setState(e.target.value)}
-          value={state}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          {/* Add your state options here */}
-          <MenuItem value="state1"></MenuItem>
-          <MenuItem value="state2">State 2</MenuItem>
-          <MenuItem value="state3">State 3</MenuItem>
-        </Select>
-      </FormControl>
-    </Grid>
-    <Grid item xs={12} className="text-center">
-      <Button variant="contained" color="primary" className='mt-4' onClick={handleformsubmit}>
-        Submit
-      </Button>
-    </Grid>
-  </Grid>
-  )
-}
+  );
+};

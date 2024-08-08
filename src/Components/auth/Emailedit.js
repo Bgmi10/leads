@@ -58,7 +58,7 @@ export const Emailedit = ({FontAwesomeIcon , faedit , user , token  , dispatch ,
   return ( 
    <>
       <div>
-        <input placeholder={user?.email}  className='bg-gray-100 p-2 m-2  border outline-none ' disabled/> <FontAwesomeIcon icon={faedit}  className = 'cursor-pointer text-blue-400' onClick={handleedit}/>
+        <input placeholder={user?.email}  className='bg-white p-2 m-2  border outline-none ' disabled/> <FontAwesomeIcon icon={faedit}  className = 'cursor-pointer text-blue-400' onClick={handleedit}/>
         {showeditpanel && (
             <Editmodel setEmail={setEmail} email={email} handleemail={handleemail} setShoweditpanel={setShoweditpanel} editname={'Email'} placeholder={'email'}/>
           )}

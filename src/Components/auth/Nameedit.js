@@ -58,7 +58,7 @@ export const Nameedit = ({username , user , baseurl , token}) => {
     <>
 
       <div className=''>
-        <input placeholder={username} className='m-2 p-2 border outline-none bg-gray-100 text-blue-400' disabled={true}/> <FontAwesomeIcon icon={faEdit}  onClick={handlenameclick}  className='cursor-pointer'/>
+        <input placeholder={username} className='m-2 p-2 border outline-none text-blue-400 bg-white' disabled={true}/> <FontAwesomeIcon icon={faEdit}  onClick={handlenameclick}  className='cursor-pointer text-blue-400'/>
         {showeditpanel && (
            <Editmodel  setEmail={setName} setShoweditpanel={setShoweditpanel} handleemail={handlename} editname={'Name'} placeholder={'name'}/>
 )}

@@ -7,7 +7,7 @@ export const Confirmindicator = ({ deletecaption, confirmdelete, cancel  , messa
       <div className="relative bg-white rounded-lg shadow-lg p-6 max-w-sm w-full mx-auto z-10">
         <div className="mt-4 text-center">
           <h2 className="text-xl font-semibold text-gray-800">Are you sure?</h2>
-          <p className="text-gray-600 mt-2">Do you really want to  {message} ? This process cannot be undone.</p>
+          <p className="text-gray-600 mt-2">Do you really want to  {message} This process cannot be undone.</p>
         </div>
         <div className="mt-6 flex justify-center space-x-4">
           <button

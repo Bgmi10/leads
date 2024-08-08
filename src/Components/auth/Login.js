@@ -48,7 +48,7 @@ export const Login = () => {
          
         
         </div>
-        {ishover && <div className='bg-white sm: hidden lg:block w- 40 h-40  border icon  z-10 rounded-md ' onMouseEnter={handlemouseenter} onMouseLeave={handlemouseleave}>
+        {ishover && <div className='bg-white sm: hidden lg:block w- 40 h-40  border icon  relative z-10 rounded-md ' onMouseEnter={handlemouseenter} onMouseLeave={handlemouseleave}>
             <div className='font-normal m-3 p-1 hover:bg-slate-300  rounded-sm '>
             <span  className='cursor-pointer ' onClick={() => window.location.href = '/myprofile'}> My Profile </span>
             
