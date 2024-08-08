@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { logout } from '../../redux/authSlice';
 import { faAngleDown, faAngleUp, faSignOut,  } from '@fortawesome/free-solid-svg-icons';
-import './login.css'
 import { toast } from 'react-toastify';
 
 export const Login = () => {

@@ -48,7 +48,7 @@ export const Samplecard = () => {
   const handlemouseenter =  (id) => {
     setDynamicimg(id)
   }
-
+  
   return (
     <>
       <div className='flex flex-wrap justify-center mb-10  '>
@@ -71,7 +71,7 @@ export const Samplecard = () => {
                   <p className='mt-3 text-lg font-sans'>
                     ₹{i.attributes.price} 
                     <span className='text-gray-400 text-sm font-light line-through ml-2'>₹{i.attributes.actualprice ? i.attributes.actualprice : null}</span>
-                    {i.attributes.offertag >= 1 && <span className='text-green-500 ml-2 font-normal text-xs'><span className='text-sm'>save</span> {i.attributes.offertag}%</span>}
+                    {i.attributes.offertag >= 1 && <span className='text-green-500 ml-2 font-normal text-xs'><span className='text-sm'>save</span> {}%</span>}
                   </p>
                 </div>
               </a>

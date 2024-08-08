@@ -4,23 +4,25 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../redux/authSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import {  faTrash } from '@fortawesome/free-solid-svg-icons';
 import { baseurl, token } from '../../utils/constants';
 import { toast } from 'react-toastify';
 import { Confirmindicator } from './Confirmindicator';
 import { Nameedit } from './Nameedit';
+import { Address } from './Address';
 
 export const Profile = () => {
 
     const user = useSelector(store => store.auth.user)
 
     const username = user?.username
-    const [profileinfo , setProfileinfo] = useState(false)
+    const [currentindex , setcurrentindex] = useState('profile')
+    
     const dispatch = useDispatch()
     const [confirmdelete , setConfirmdelete] = useState(false)
-
+    
     const handleprofileinfo = ()=> {
-        setProfileinfo(true)
+        setcurrentindex('profile')
     }
 
     const handlelogout = ()  => {
@@ -60,6 +62,10 @@ export const Profile = () => {
       
         deleteuser()
     }
+
+    const handlemanageaddress = () => {
+      setcurrentindex('address')
+    }
   return (
 
    
@@ -82,11 +88,11 @@ export const Profile = () => {
             <span className='text-xl font-normal  '><SettingsIcon  fontSize='large'  color='primary' className=' m-3  '/> Account settings </span>
             
         </div>
-        <div className='mt-2'>
-                <span className='ml-16 cursor-pointer text-gray-400 hover:text-gray-600 ' onClick={handleprofileinfo}>Profile Information</span>
+        <div className={currentindex === 'profile' && ' bg-gray-100 mt-2'}>
+                <span className={ 'ml-16 cursor-pointer text-gray-400 hover:text-gray-600 '} onClick={handleprofileinfo}>Profile Information</span>
             </div>
-            <div className='mt-2  '>
-                <span className='ml-16 cursor-pointer text-gray-400 hover:text-gray-600 '>Manage Address</span>
+            <div className={currentindex === 'address' && 'bg-gray-100 mt-2 '}>
+                <span className='ml-16 cursor-pointer text-gray-400 hover:text-gray-600' onClick={handlemanageaddress}>Manage Address</span>
                 <hr className='mt-5'></hr>
             </div>
             <div >
@@ -96,8 +102,12 @@ export const Profile = () => {
             
     </div>
     </div>
-    {profileinfo && 
-            <div className='m-10 border lg:w-full bg-white p-4  shadow-md'>
+    
+                  <div>
+           
+                 {currentindex === 'address'  && <Address />}
+                   
+           {currentindex === 'profile' && <div className='m-10  p-4  shadow-md bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50'>
                    <Nameedit  username={username} user={user} baseurl={baseurl} token={token}/>
                      <div> 
                      <span className='text-red-500 cursor-pointer' onClick={() => 
@@ -110,9 +120,10 @@ export const Profile = () => {
                     } } deletecaption={'Confirm delete'} cancle={'cancel'} message={'Delete Your account'}/> }
 
                      <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/myProfileFooter_4e9fe2.png'  className='mt-24'/>
-             </div>
-                    }
+             </div>}
+             </div>                
     </div>
+    
    
     </>
    

@@ -54,12 +54,13 @@ export const Nameedit = ({username , user , baseurl , token}) => {
         setShoweditpanel(true)
     }
     
-  return (
+  return ( 
     <>
-      <div >
-        <span> Name : {username} <FontAwesomeIcon icon={faEdit}  onClick={handlenameclick}  className='cursor-pointer'/></span>
+
+      <div className=''>
+        <input placeholder={username} className='m-2 p-2 border outline-none bg-gray-100 text-blue-400' disabled={true}/> <FontAwesomeIcon icon={faEdit}  onClick={handlenameclick}  className='cursor-pointer'/>
         {showeditpanel && (
-           <Editmodel email={name} setEmail={setName} setShoweditpanel={setShoweditpanel} handleemail={handlename} editname={'Name'} placeholder={'name'}/>
+           <Editmodel  setEmail={setName} setShoweditpanel={setShoweditpanel} handleemail={handlename} editname={'Name'} placeholder={'name'}/>
 )}
 
        </div>
