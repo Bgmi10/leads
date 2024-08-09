@@ -5,20 +5,22 @@ import { Addressform } from './Addressform';
 import { baseurl, token } from '../../utils/constants';
 import { toast } from 'react-toastify';
 import { Addresscards } from './Addresscards';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { selectedMessage } from '../../redux/Selectedaddressslice';
 
 
 export const Addresscard = ({filterdata}) => {
 
     const [isopen  , setIsopen ] = useState(false)
     const [loadedData , setLoadedData] = useState(null)
+    const dispatch = useDispatch()
+    const selctedata = useSelector(store => store.selectedaddress)
     
-     
     const handleeditaddress = (id) => {
         setIsopen(true)
        const loadeddata = filterdata.find((i) => i.id === id)
        setLoadedData(loadeddata)
-
+      
     }
 
     const handleFormSubmit  = () => {
@@ -48,9 +50,15 @@ export const Addresscard = ({filterdata}) => {
         }
         update_data()
     }
+
+    const handleselectaddress   = (id) => {
+
+      dispatch(selectedMessage(id))
+  
+    }
   return (
    <>
-       <Addresscards handleeditaddress={handleeditaddress} filterdata={filterdata} token={token} baseurl={baseurl}/>
+       <Addresscards handleeditaddress={handleeditaddress} filterdata={filterdata} token={token} baseurl={baseurl} handleselectaddress={handleselectaddress} selctedata={selctedata}/>
 
         {isopen &&  <div>
             <div className="fixed inset-0 flex items-center justify-center z-50">

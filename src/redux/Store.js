@@ -4,6 +4,7 @@ import Searchcacheslice from './Searchcacheslice'
 import multiimgslice from './multiimgslice'
 import producthoverslice from './producthoverslice'
 import authSlice from './authSlice'
+import Selectedaddressslice from './Selectedaddressslice'
 
 const store = configureStore({
 
@@ -13,7 +14,8 @@ const store = configureStore({
         cacheresults : Searchcacheslice,
         multiimg : multiimgslice,
         producthover : producthoverslice,
-        auth : authSlice
+        auth : authSlice,
+        selectedaddress : Selectedaddressslice
 
     }
 })

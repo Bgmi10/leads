@@ -5,17 +5,17 @@ import { faEdit  , faTrash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-export const Addresscards = ({handleeditaddress , filterdata , token , baseurl}) => {
+export const Addresscards = ({handleeditaddress , filterdata , token , baseurl ,handleselectaddress , selctedata}) => {
   return (
    
     <>
        { filterdata?.map((i) => (
-         <div key={i.id} className="border p-4 m-4 rounded-lg shadow-md bg-white">
+         <div key={i.id} className="border p-4 m-4 rounded-lg shadow-md bg-white" onClick={()=>handleselectaddress(i)}>
              
               <div className='flex justify-between  '>
                 <div>
                    
-                <DoneAllIcon fontSize='small' color='primary'/>
+                {selctedata.id === i.id &&<DoneAllIcon fontSize='small' color='primary'/>}
                 </div>
                 <div>
                 <FontAwesomeIcon icon={faEdit} onClick={()=> handleeditaddress(i?.id)} className='cursor-pointer '/>

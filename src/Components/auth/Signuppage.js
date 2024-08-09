@@ -66,6 +66,7 @@ export const Signuppage = () => {
              toast.success( issingupform ? 'Account created successfully' : 'Logged successfully' )
              window.location.href = '/'
              sessionStorage.setItem('usertoken' , data.jwt)
+             console.log(data)
              localStorage.setItem('user' , JSON.stringify(data.user))
             }
             else{

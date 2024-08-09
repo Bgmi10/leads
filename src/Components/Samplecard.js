@@ -73,7 +73,7 @@ export const Samplecard = () => {
                   <p className='mt-3 text-lg font-sans'>
                     ₹{i.attributes.price} 
                     <span className='text-gray-400 text-sm font-light line-through ml-2'>₹{i.attributes.actualprice ? i.attributes.actualprice : null}</span>
-                    {i.attributes.offertag >= 1 && <span className='text-green-500 ml-2 font-normal text-xs'><span className='text-sm'>save</span> {i.attributes.actualprice - i.attributes.price  / i.attributes.actualprice  }%</span>}
+                    {i.attributes.offertag >= 1 && <span className='text-green-500 ml-2 font-normal text-xs'><span className='text-sm'>save</span> {Math.floor(((i.attributes.actualprice - i.attributes.price)  / i.attributes.actualprice * 100 ) )  }%</span>}
                   </p>
                 </div>
               </a>

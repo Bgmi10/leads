@@ -17,7 +17,7 @@ export const Profile = () => {
     const [currentIndex, setCurrentIndex] = useState('profile');
     const dispatch = useDispatch();
     const [confirmDelete, setConfirmDelete] = useState(false);
-
+    console.log(user)
     const handleProfileInfo = () => {
         setCurrentIndex('profile');
     };
@@ -40,6 +40,7 @@ export const Profile = () => {
                 });
 
                 const res = await data.json();
+              
                 if (data.ok) {
                     dispatch(logout());
                     window.location.pathname = '/signup';
