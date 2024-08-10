@@ -50,7 +50,7 @@ export const Searchbar = () => {
           className='cursor-pointer absolute right-1 border-l text-gray-400 hover:text-blue-400 transition duration-300 ease-in-out'
         />
       </div>
-      {isopen && userinput.length > 0 && <div className='flex-col flex '>
+      {isopen && userinput.length > 0 && <div className='flex-col flex  '>
         <SearchResultbox userinput={userinput}  />
       </div>}
     </div>

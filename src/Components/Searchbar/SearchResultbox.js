@@ -33,7 +33,7 @@ export const SearchResultbox = ({userinput}) => {
 
   return (
    <>
-    <div className='bg-white font-normal text-black border w-[385px] mt-[-15px]  ml-4 rounded-md h-[300px] '>
+    <div className='bg-white font-normal text-black border w-[385px] mt-[-15px] z-50 ml-4 rounded-md h-[300px] '>
              {
                 data?.products.map((i) => (
                     <div className='p-2 m-3 ' key={i.id}>

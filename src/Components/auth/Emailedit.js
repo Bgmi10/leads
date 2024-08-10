@@ -40,10 +40,15 @@ export const Emailedit = ({FontAwesomeIcon , faedit , user , token  , dispatch ,
                     toast.success('email updated sucessfully')
                     setShoweditpanel(false)
                 }
+                else{
+                    const message = await res.json()
+                    toast.error(message.error.message)
+                }
             }
 
             catch (err){
                 console.log(err)
+               
             }
         }
         email_edit()

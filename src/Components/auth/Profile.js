@@ -61,7 +61,7 @@ export const Profile = () => {
         <>
             <div className="lg:flex min-h-screen bg-gray-50">
                 <div className="lg:ml-20 mt-10 flex flex-col lg:w-72">
-                    <div className="border rounded-lg shadow-md bg-white p-4 flex items-center">
+                    <div className="border rounded-lg shadow-md bg-white p-4 flex items-center ">
                         <img
                             src="https://img.freepik.com/premium-vector/round-man-character-mockup-icon-flat-color-round-man-icon-blue-jacket-brown-hair-character-template-vector-icon_774778-2423.jpg?ga=GA1.1.1168591914.1718009553&semt=ais_hybrid"
                             className="h-20 w-20 rounded-full"
