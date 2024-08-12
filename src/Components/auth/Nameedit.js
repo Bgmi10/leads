@@ -1,12 +1,12 @@
 import { faBars, faClose, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
-import { Confirmindicator } from './Confirmindicator'
 import { toast } from 'react-toastify'
 import { register } from '../../redux/authSlice'
 import { useDispatch } from 'react-redux'
 import { Emailedit } from './Emailedit'
 import { Editmodel } from './Editmodel'
+import { Changepassword } from './Changepassword'
 
 
 export const Nameedit = ({username , user , baseurl , token}) => {
@@ -65,6 +65,8 @@ export const Nameedit = ({username , user , baseurl , token}) => {
 
        </div>
              <Emailedit faedit={faEdit} FontAwesomeIcon={FontAwesomeIcon} user={user} token={token} dispatch={dispatch} register={register} />
+
+             <Changepassword />
      </>
   )
 }

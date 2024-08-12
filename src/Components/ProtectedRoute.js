@@ -6,7 +6,7 @@ export const ProtectedRoute = ({children}) => {
 
 
     const isAuthenticated = useSelector(store => store.auth.isAuthenticated)
-    console.log(isAuthenticated)
+    
     
  return (
     <div>

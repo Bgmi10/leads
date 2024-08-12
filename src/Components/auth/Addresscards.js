@@ -10,12 +10,12 @@ export const Addresscards = ({handleeditaddress , filterdata , token , baseurl ,
    
     <>
        { filterdata?.map((i) => (
-         <div key={i.id} className="border p-4 m-4 rounded-lg shadow-md bg-white" onClick={()=>handleselectaddress(i)}>
+         <div key={i?.id} className="border p-4 m-4 rounded-lg shadow-md bg-white" onClick={()=>handleselectaddress(i)}>
              
               <div className='flex justify-between  '>
                 <div>
                    
-                {selctedata.id === i.id &&<DoneAllIcon fontSize='small' color='primary'/>}
+                {selctedata?.id === i?.id &&<DoneAllIcon fontSize='small' color='primary'/>}
                 </div>
                 <div>
                 <FontAwesomeIcon icon={faEdit} onClick={()=> handleeditaddress(i?.id)} className='cursor-pointer '/>
@@ -23,13 +23,13 @@ export const Addresscards = ({handleeditaddress , filterdata , token , baseurl ,
                 </div>
               </div>
               <div className="font-bold text-lg text-gray-700 mt-1">
-                  <span>{i.attributes.name}</span>
+                  <span>{i?.attributes?.name}</span>
               </div>
               <div className="mt-2 text-gray-600">
-                  <span>{i.attributes.mobilenumber}</span>
+                  <span>{i?.attributes?.mobilenumber}</span>
               </div>
               <div className="mt-2 text-gray-600">
-                  <span>{i.attributes.address}</span>
+                  <span>{i?.attributes?.address}</span>
               </div>
        </div>
          ))}

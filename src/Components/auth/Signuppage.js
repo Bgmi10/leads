@@ -55,7 +55,7 @@ export const Signuppage = () => {
             const res = await fetch(issingupform ? baseurl + '/api/auth/local/register'  : baseurl + '/api/auth/local/',{
                 method : "POST",
                 headers : {
-                       
+                        'Authorization' : `Bearer ${token} ` ,
                         'Content-Type': 'application/json',
                 },
                 body : JSON.stringify(issingupform ? signup_Form_data : login_form_data )
@@ -66,7 +66,7 @@ export const Signuppage = () => {
              toast.success( issingupform ? 'Account created successfully' : 'Logged successfully' )
              window.location.href = '/'
              sessionStorage.setItem('usertoken' , data.jwt)
-             console.log(data)
+             
              localStorage.setItem('user' , JSON.stringify(data.user))
             }
             else{

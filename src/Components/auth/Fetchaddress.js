@@ -9,7 +9,7 @@ export const Fetchaddress = () => {
 
     const [data, setData] = useState(null);
     const id = useSelector((store) => store.auth.user.id);
-    const filterdata = data?.data?.filter((i) => i.attributes.userid === id);
+    const filterdata = data?.data?.filter((i) => i?.attributes?.userid === id);
 
     useEffect(() => {
         const fetch_data = async () => {

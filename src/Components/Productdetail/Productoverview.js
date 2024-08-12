@@ -44,8 +44,8 @@ export const Productoverview = ({ data }) => {
       dispatch(updateitemcartquantity({ id, quantity: item?.quantity - 1 }));
     }
   };
-  const currquantity = items.find(i => i?.id === data?.data?.id   )
-  console.log(currquantity)
+  const currquantity = items.find(i => i?.id === data?.data?.id)
+
   const handlecheck = () => {
    if(currquantity === undefined){
      toast.warning('add item to cart ')  
