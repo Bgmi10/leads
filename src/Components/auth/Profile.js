@@ -24,7 +24,7 @@ export const Profile = () => {
 
     const handleLogout = () => {
         dispatch(logout());
-        window.location.href = '/';
+        window.location.href = '/signup';
     };
 
     const handleDeleteAccount = () => {

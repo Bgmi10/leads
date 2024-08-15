@@ -29,8 +29,8 @@ export const Imageshowcase = () => {
           <div
             key={index}
             className={`transition-all duration-700 ease-in-out relative ${
-              hoveredIndex === index ? 'w-[130%] z-20 ' : 'lg:w-[250px] sm: w-[60px] '
-            } lg:h-[450px] sm: h-[140px] rounded-3xl overflow-hidden`}
+              hoveredIndex === index ? 'w-[130%] z-20 ' : 'lg:w-[250px] mt-5 sm: w-[60px] '
+            } lg:h-[450px] sm: h-[140px] mt-5  rounded-3xl overflow-hidden`}
             onMouseEnter={() => setHoveredIndex(index)} // setHoverindex(2)
             onMouseLeave={() => setHoveredIndex(index)} // 0 
           >

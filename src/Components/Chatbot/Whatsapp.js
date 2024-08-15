@@ -17,7 +17,7 @@ const ChatWidget = () => {
 
  const username = user?.username
   const  initialMessages =  [
-    createChatBotMessage(`Hello! 👋 ${username} Welcome to Leads . How can I help you today?`, {
+    createChatBotMessage(`Hello! 👋 ${username === undefined ? 'Guest' : username} Welcome to Leads . How can I help you today?`, {
       widget: "productOptions",
     }),
   ] 

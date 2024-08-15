@@ -16,6 +16,7 @@ import { ProtectedRoute } from "./Components/ProtectedRoute";
 import { NotFound } from "./Components/NotFound";
 import { Profile } from "./Components/auth/Profile";
 import { Address } from "./Components/auth/Address";
+import { Feedbackmain } from "./Components/Feedback/Feedbackmain";
 
 const LazyProductDetail = lazy(() => import('./Components/Productdetail/Productdetail'))
 
@@ -43,6 +44,7 @@ function App() {
             <Products />
             <Samplecard />
             <Imageshowcase />
+            <Feedbackmain />
             </>
           } />
          
