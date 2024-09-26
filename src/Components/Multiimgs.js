@@ -20,7 +20,7 @@ export const Multiimgs = ({data}) => {
   }
   },[multiimgs ])
   return (
-    <div className='lg:ml-4 sm: ml-3 py-8 sm: flex lg:flex-col lg:flex'>
+    <div className='lg:ml-4 sm: justify-center sm: flex py-8 lg:flex-col lg:flex lg:justify-start'>
         {
             data?.data?.attributes?.groupimgs?.data?.map((i ) => (
                 <img src={baseurl +  i.attributes.url} key={i.attributes.url} alt='groupimg'  className=' rounded-md w-24 h-auto border l:m-2 sm: m-1 cursor-pointer transition-transform hover:scale-105 hover:shadow-md'  onMouseEnter={()=>handlemouseenter(i.attributes.url)}/>

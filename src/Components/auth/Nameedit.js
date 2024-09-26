@@ -17,7 +17,10 @@ export const Nameedit = ({username , user , baseurl , token}) => {
     const [showeditpanel, setShoweditpanel] = useState(false)
 
     const handlename = ()  => {
-
+          if(name === ''){
+            toast.warn('field cannot be empty')
+            return
+          }
         const id = user?.id
        
         const edit = async () => {
@@ -41,10 +44,13 @@ export const Nameedit = ({username , user , baseurl , token}) => {
           setShoweditpanel(false)
           
            }
+            if(res.status === 400){
+            toast.error('username already exist')
+           }
         }
          catch(err){
                 console.log(err)
-                toast.error(err)
+                toast.error(err.error.message)
             }
         }
         edit()

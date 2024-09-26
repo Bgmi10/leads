@@ -6,7 +6,7 @@ export const ReviewCard = () => {
 
     
     return (
-        <div className='relative h-80 overflow-hidden  '>
+        <div className='relative h-80 overflow-hidden lg:mt-16  '>
          
             <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-transparent z-10"></div>
 

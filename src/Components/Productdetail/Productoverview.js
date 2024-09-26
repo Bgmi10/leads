@@ -56,7 +56,7 @@ export const Productoverview = ({ data }) => {
 }
   return (
     <>
-      <div className="py-5 m-4">
+      <div className="lg:py-4 m-4">
         <Breadcrumbs />
         <div className="py-2">
           <span className="font-bold text-2xl text-gray-800">{data?.data?.attributes?.name}</span>
@@ -78,13 +78,13 @@ export const Productoverview = ({ data }) => {
               <div className="mt-4">
                 <span className="block text-gray-600 text-base">Quantity</span>
                 <div className="flex items-center mt-2">
-                <button className="p-2 border border-gray-300 rounded-r-md flex items-center justify-center" onClick={handlecheck}  >
-                    <Cartincreasebutton  Fab={RemoveIcon} i={data?.data} handleIncrease={handleDecrease}   />
-                  </button>
-                  
-                  <span className="mx-4">{currquantity?.quantity || 0  }</span>
+               
                   <button className="p-2 border border-gray-300 rounded-l-md flex items-center justify-center" onClick={handlecheck}>
-                  <Cartdecreasebutton Fab={AddIcon} i={data?.data} handleDecrease={handleIncrease}/>
+                  <Cartdecreasebutton Fab={AddIcon} i={data?.data} handleDecrease={handleDecrease}/>
+                  </button>
+                  <span className="mx-4">{currquantity?.quantity || 0  }</span>
+                  <button className="p-2 border border-gray-300 rounded-r-md flex items-center justify-center" onClick={handlecheck}  >
+                    <Cartincreasebutton  Fab={RemoveIcon} i={data?.data} handleIncrease={handleIncrease}   />
                   </button>
                  
                   <div className='m-4'>

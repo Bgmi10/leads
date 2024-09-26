@@ -34,7 +34,7 @@ export const DeleteAddress = ({FontAwesomeIcon , faTrash , i , filterdata , base
    
   return (
    <>
-      <FontAwesomeIcon icon={faTrash} onClick={() => handledel(i.id)}  className='ml-2 text-red-500 cursor-pointer' />
+      <FontAwesomeIcon icon={faTrash} onClick={() => handledel(i.id)}  className='ml-2  text-red-500 cursor-pointer ' />
       
       
    </>

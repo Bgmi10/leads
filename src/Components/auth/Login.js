@@ -36,28 +36,28 @@ export const Login = () => {
         <>
         <div className='flex items-center space-x-2 ' >
           <button
-            className='lg:block sm: hidden font-normal text-lg border border-gray-300 bg-white text-gray-700 rounded-md p-1 hover:bg-gray-200 transition duration-300'
-            onClick={() => { window.location.href = '/myprofile'; }}
+            className='lg:block sm: hidden font-normal text-lg border border-gray-300 bg-white text-gray-700 rounded-md p-1 hover:bg-slate-100 transition duration-300 w-auto'
+            onClick={() => { window.location.href = '/myprofile' }}
             onMouseEnter={handlemouseenter}
             onMouseLeave={handlemouseleave}
           >
             <AccountCircleIcon fontSize='medium' className='mr-1' />
-            {isAuthenticated.username.slice(0, 10)}...
+            {isAuthenticated.username.slice(0, 10)}
             <FontAwesomeIcon icon={!ishover ? faAngleDown : faAngleUp}  className='text-sm text-slate-400 from-neutral-300 ' />
           </button> 
          
         
         </div>
-        {ishover && <div className='bg-white sm: hidden lg:block w- 40 h-40  border icon  relative z-10 rounded-md ' onMouseEnter={handlemouseenter} onMouseLeave={handlemouseleave}>
-            <div className='font-normal m-3 p-1 hover:bg-slate-300  rounded-sm '>
+        {ishover && <div className='bg-white sm: hidden lg:block w-auto h-40  border icon  relative z-10 rounded-md ' onMouseEnter={handlemouseenter} onMouseLeave={handlemouseleave}>
+            <div className='font-normal m-3 p-1 hover:bg-slate-100  rounded-sm '>
             <span  className='cursor-pointer ' onClick={() => window.location.href = '/myprofile'}> My Profile </span>
             
             </div>
-            <div className='font-normal m-3 p-1 hover:bg-slate-300  rounded-sm'>
+            <div className='font-normal m-3 p-1 hover:bg-slate-100  rounded-sm'>
             <span  className='cursor-pointer ' onClick={() => window.location.href = '/myprofile'}>Profile </span>
             
             </div>
-            <div className='font-normal m-3 p-1 hover:bg-slate-300  rounded-sm'>
+            <div className='font-normal m-3 p-1 hover:bg-slate-100  rounded-sm'>
             <span  className='cursor-pointer ' onClick={handleLogout}><FontAwesomeIcon icon={faSignOut} />Logout </span>
             
             </div>

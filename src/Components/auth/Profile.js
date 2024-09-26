@@ -112,14 +112,14 @@ export const Profile = () => {
                     {currentIndex === 'address' && <Address />}
 
                     {currentIndex === 'profile' && (
-                        <div className="m-4 p-6 rounded-lg shadow-md bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50">
+                        <div className="m-4 p-6 rounded-lg shadow-md">
                             <Nameedit username={username} user={user} baseurl={baseurl} token={token} />
-                            <div className="mt-8">
+                            <div className="mt-4 ml-3">
                                 <button
-                                    className="text-white bg-red-500 hover:bg-red-600 py-2 px-4 rounded-lg flex items-center"
+                                    className="text-white bg-red-600 hover:bg-red-700 py-2 px-11 rounded-sm flex items-center"
                                     onClick={() => setConfirmDelete(true)}
                                 >
-                                    Delete Account <FontAwesomeIcon icon={faTrash} className="ml-2" />
+                                    Delete Account
                                 </button>
                             </div>
                             {confirmDelete && (
@@ -137,7 +137,7 @@ export const Profile = () => {
                             )}
                             <img
                                 src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/myProfileFooter_4e9fe2.png"
-                                className="mt-10 mx-auto"
+                                className=""
                                 alt="Profile Footer"
                             />
                         </div>

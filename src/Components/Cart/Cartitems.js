@@ -64,7 +64,7 @@ export const Cartitems = ({ items }) => {
       {arrowOpen && items.map((i) => {
         const cartItem = items.find(item => item.id === i.id);
         return (
-          <div className='flex items-center justify-between p-4 border-b border-gray-200' key={i.id}>
+          <div className='flex items-center justify-start p-4 border-b border-gray-200' key={i.id}>
             <div className='flex-shrink-0'>
               <Link to={`/productdetail/${i.id}`}>
                 <img 

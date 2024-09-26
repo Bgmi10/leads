@@ -32,9 +32,9 @@ const ChatWidget = () => {
     <div className="flex justify-end">
       <div
         onClick={() => setShowChat(prev => !prev)}
-        className='chat-toggle-button mr-5 bg-yellow-300 fixed p-2 rounded-full cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out bottom-6'
+        className='chat-toggle-button mr-5 bg-blue-500 fixed p-2 rounded-full cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out bottom-6'
       >
-        {!showChat ? <QuickreplyRoundedIcon style={{ fontSize: '30px' }} /> : <CloseRoundedIcon style={{ fontSize: '30px' }} />}
+        {!showChat ? <QuickreplyRoundedIcon style={{ fontSize: '30px' }} className='text-white' /> : <CloseRoundedIcon style={{ fontSize: '30px' }} className='text-white'  />}
       </div>
 
       <div

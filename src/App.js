@@ -24,7 +24,8 @@ const LazyCartPage = lazy(() => import('./Components/Cart/Cartdetail'))
 
 
 function App() {
- const isauthicated = useSelector(store => store.auth.isAuthenticated)
+ const isauthicated = useSelector(store => store.auth)
+ 
  
   return (
     <div>

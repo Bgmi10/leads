@@ -26,10 +26,10 @@ export const Fetchaddress = () => {
             }
         };
         fetch_data();
-    }, []);
+    }, [data]);
 
     return (
-        <div className=" bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50  mt-8 ">
+        <div className="mt-8">
             <div className="container border-t-lime-700 border-t-2 ">
                 <div className="lg:flex lg:flex-wrap justify-center  ">
                    

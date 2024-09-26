@@ -13,7 +13,7 @@ export const Editmodel = ( {email , setEmail , handleemail ,setShoweditpanel , e
       <h2 className="text-xl font-semibold mb-4">Edit {editname}</h2>
       <input 
         type="text" 
-        className="p-2 m-2 w-full rounded-md border border-gray-300 outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" 
+        className="p-2  w-full rounded-md border border-gray-300 outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" 
         onChange={e => setEmail(e.target.value)} 
         value={email} 
         placeholder={placeholder}

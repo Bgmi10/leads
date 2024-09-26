@@ -46,7 +46,7 @@ export const CartInvoice = ({ items }) => {
         <span className=' text-sm text-gray-600 italic'> ** you will save ₹{discountPrice} on this order ** </span>
       </div>
       <div className='justify-center flex'>
-            <Checkout items={items} />
+            <Checkout finalPrice={finalPrice}/>
       </div>
     </div>
   );

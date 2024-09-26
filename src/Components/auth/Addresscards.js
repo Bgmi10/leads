@@ -10,7 +10,7 @@ export const Addresscards = ({handleeditaddress , filterdata , token , baseurl ,
    
     <>
        { filterdata?.map((i) => (
-         <div key={i?.id} className="border p-4 m-4 rounded-lg shadow-md bg-white" onClick={()=>handleselectaddress(i)}>
+         <div key={i?.id} className="border p-4 m-4 rounded-lg shadow-md bg-white cursor-pointer" onClick={()=>handleselectaddress(i)}>
              
               <div className='flex justify-between  '>
                 <div>

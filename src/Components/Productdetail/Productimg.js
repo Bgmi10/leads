@@ -42,22 +42,25 @@ export const Productimg = ({ imageurl, scale = 2}) => {
   return (
     <>
     <div
-      className="relative overflow-hidden  sm: w-[230px] sm: m-10  sm: h-[256px] md:w-80 md:h-80 cursor-none  lg:h-[375px] xl:w-128 xl:h-128 mt-10   lg:ml-6 border   rounded-md   "
+      className="relative overflow-hidden  sm: justify-center sm: flex sm: h-[256px] md:w-80 md:h-80 cursor-none  lg:h-[382px] xl:w-128 xl:h-128 lg:mt-9 sm: mt-4 lg:ml-6 lg:border rounded-md"
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       onMouseMove={handleMouseMove}
       style={{ backgroundImage: `url(${imageurl})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
-      
     >
+      
     
     </div>
+    <button className='absolute mt-[-120px]'>prev</button>
    {isHover && <div onMouseMove={handleMouseMove} style={{ position : 'absolute' ,top : mousePosition.y + 141,left : mousePosition.x + 119,  backgroundPosition : transformOrigin,  transform: 'translate(-50%, -50%)',
               pointerEvents: 'none'}}>
        <LensBlurIcon fontSize='medium' />
     
     </div>}
-    
-   <div className={!sm ? 'ml-[500px] absolute ' : 'hidden'}>
+    <div className='justify-end flex'>
+    <button className='absolute mt-[-120px]' >next</button>
+    </div>
+   <div className={!sm ? 'ml-[520px] absolute ' : 'hidden'}>
     {isHover && (
      <>
      

@@ -48,7 +48,10 @@ export const Changepassword = () => {
   return (
     <>
        <div>
-            <button onClick={() => setShowpanel(true)}>Change password</button>
+       <button onClick={() => setShowpanel(true)} className='bg-gray-600 hover:bg-gray-700 text-white font-normal py-2 px-[35px] ml-3 mt-2 rounded-sm'>
+              Change Password
+       </button>
+
             { showpanel && <div className="fixed inset-0 flex items-center justify-center z-50">
     
                 <div className="bg-black bg-opacity-50 w-full h-full absolute"></div>

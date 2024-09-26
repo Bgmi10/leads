@@ -27,12 +27,13 @@ export const Productdetail = () => {
     useEffect(() =>{
       fetch_data()
     },[id])
-  
+   const sm = window.innerWidth <= 768
   return (
     <>
-    <div className="lg:flex  ">
-      <Multiimgs data={data}/>
+    <div className="lg:flex">
+     { !sm && <Multiimgs data={data}/>}
      <Productimg imageurl={ baseurl + imgslice }/>
+     { sm && <Multiimgs data={data}/>}
 
      <Productoverview  data={data}/>
   </div>
